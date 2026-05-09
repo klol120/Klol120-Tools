@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Equinox | PDF Converter Tool</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#33394c",
+                        "on-tertiary": "#233148",
+                        "tertiary-fixed-dim": "#b9c7e4",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#23293c",
+                        "secondary-container": "#0050ee",
+                        "inverse-surface": "#dce1fb",
+                        "primary": "#c3f5ff",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#0c1324",
+                        "error-container": "#93000a",
+                        "tertiary": "#e6edff",
+                        "on-tertiary-container": "#4c5973",
+                        "on-secondary-container": "#d4dbff",
+                        "inverse-primary": "#006875",
+                        "background": "#0c1324",
+                        "surface-container": "#191f31",
+                        "on-primary": "#00363d",
+                        "on-tertiary-fixed": "#0d1c32",
+                        "primary-fixed-dim": "#00daf3",
+                        "surface-variant": "#2e3447",
+                        "surface": "#0c1324",
+                        "outline-variant": "#3b494c",
+                        "secondary": "#b6c4ff",
+                        "on-primary-container": "#00626e",
+                        "inverse-on-surface": "#2a3043",
+                        "on-tertiary-fixed-variant": "#39475f",
+                        "primary-container": "#00e5ff",
+                        "on-surface": "#dce1fb",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#001550",
+                        "secondary-fixed-dim": "#b6c4ff",
+                        "surface-container-highest": "#2e3447",
+                        "surface-container-low": "#151b2d",
+                        "on-background": "#dce1fb",
+                        "on-primary-fixed": "#001f24",
+                        "on-secondary": "#002780",
+                        "outline": "#849396",
+                        "surface-tint": "#00daf3",
+                        "on-primary-fixed-variant": "#004f58",
+                        "on-secondary-fixed-variant": "#003ab3",
+                        "on-surface-variant": "#bac9cc",
+                        "primary-fixed": "#9cf0ff",
+                        "secondary-fixed": "#dce1ff",
+                        "tertiary-container": "#c3d1ef",
+                        "tertiary-fixed": "#d6e3ff",
+                        "surface-container-lowest": "#070d1f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(10, 25, 47, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-radial-gradient {
+            background: radial-gradient(circle at top center, #004f58 0%, #0c1324 70%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- TopAppBar -->
+<nav class="bg-background/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/10 shadow-lg shadow-primary/5 flex justify-between items-center px-margin-mobile h-16">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary active:scale-95 transition-transform cursor-pointer" data-icon="menu">menu</span>
+<span class="font-headline-md text-headline-md font-bold tracking-tight text-primary">Equinox</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary font-label-md text-label-md transition-colors hover:text-primary" href="#">Tools</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors" href="#">Roadmap</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary active:scale-95 transition-transform cursor-pointer" data-icon="search">search</span>
+<button class="bg-primary-container text-on-primary-container px-4 py-1.5 rounded-full font-label-md text-label-md font-bold active:scale-95 transition-transform">Contact us</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="pt-32 pb-32 px-margin-mobile md:px-margin-desktop bg-radial-gradient">
+<div class="max-w-[1280px] mx-auto">
+<!-- Hero Header -->
+<div class="text-center mb-16">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20 mb-6">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-primary font-label-md text-label-md uppercase tracking-widest">Premium Utility</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg md:text-display-lg mb-4 text-white">
+                    PDF <span class="italic font-light">Conversion</span> Hub
+                </h1>
+<p class="text-on-surface-variant max-w-2xl mx-auto font-body-lg text-body-lg">
+                    High-performance document processing. Seamlessly merge, split, and convert your documents with military-grade encryption and precision.
+                </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Sidebar Controls (3 cols) -->
+<aside class="lg:col-span-3 space-y-6">
+<div class="glass-panel p-6 rounded-2xl">
+<h3 class="text-white font-headline-sm text-headline-sm mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="tune">tune</span>
+                            Tools
+                        </h3>
+<div class="space-y-3">
+<!-- Toggle Options -->
+<button class="w-full flex items-center justify-between p-4 rounded-xl bg-primary/10 text-primary border border-primary/30 transition-all active:scale-95">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span class="font-label-md text-label-md">Convert</span>
+</span>
+<span class="material-symbols-outlined text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 rounded-xl glass-panel text-on-surface-variant hover:border-primary/50 transition-all active:scale-95 group">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors" data-icon="merge">merge</span>
+<span class="font-label-md text-label-md">Merge</span>
+</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 rounded-xl glass-panel text-on-surface-variant hover:border-primary/50 transition-all active:scale-95 group">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors" data-icon="call_split">call_split</span>
+<span class="font-label-md text-label-md">Split</span>
+</span>
+</button>
+</div>
+<div class="mt-8 pt-8 border-t border-white/10">
+<h4 class="text-white/60 font-label-md text-label-md mb-4 uppercase tracking-tighter">Output Format</h4>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 rounded-lg bg-surface-variant text-white text-sm font-medium border border-primary/20">Word</button>
+<button class="py-2 px-3 rounded-lg glass-panel text-white/50 text-sm font-medium border border-transparent hover:border-white/20 transition-all">Excel</button>
+<button class="py-2 px-3 rounded-lg glass-panel text-white/50 text-sm font-medium border border-transparent hover:border-white/20 transition-all">Image</button>
+<button class="py-2 px-3 rounded-lg glass-panel text-white/50 text-sm font-medium border border-transparent hover:border-white/20 transition-all">TXT</button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Central Upload Zone (9 cols) -->
+<div class="lg:col-span-9 space-y-6">
+<div class="glass-panel rounded-2xl p-8 min-h-[480px] flex flex-col items-center justify-center relative overflow-hidden group cursor-pointer border-dashed border-2 border-primary/30 hover:border-primary transition-colors">
+<!-- Abstract Background Decoration -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="Abstract deep blue and cyan digital waves with crystalline textures and light refraction. The scene is futuristic and high-tech, representing digital data flow and precise processing. Moody, high-contrast lighting illuminates the scene in an infinite dark navy environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK1LBvORchWxP5OViOElb13BBZHa5KbweyDOnJE-0AlRiRhgB0xI4ESGsxLwXQ23JjUiFgUrrDsxqMAL-rRXQU7u4h6TeINsY31Af68yjpijTLu97yMbw7FBKYuzgdEuRCJ8QFLe59t-vr5dbjfjCsjjJ2wIQDqsw4IKJCMSWWpHCS7OzNpOQ9eCfW7eCAjC2pIjSR7isq28njj4zxBhzKAjMJHWrCjqfqFPRa_F8oyaUOuzFUr_wAoW83kMLIzFuUS07qsv-fi9cJ"/>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-24 h-24 mb-6 rounded-3xl bg-primary/20 flex items-center justify-center border border-primary/40 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="cloud_upload">cloud_upload</span>
+</div>
+<h2 class="text-white font-headline-md text-headline-md mb-2">Drag &amp; drop files here</h2>
+<p class="text-on-surface-variant mb-8 max-w-sm">Select PDF documents from your computer or cloud storage to start the high-speed conversion process.</p>
+<button class="bg-primary-container text-on-primary-container px-8 py-3 rounded-xl font-headline-sm text-headline-sm font-bold shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+                                Choose Files
+                            </button>
+<div class="mt-12 flex items-center gap-6 text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+<span class="text-xs uppercase tracking-widest font-semibold">256-Bit SSL Encryption</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="verified_user">verified_user</span>
+<span class="text-xs uppercase tracking-widest font-semibold">Privacy Guaranteed</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Processing Progress (Placeholder) -->
+<div class="glass-panel p-6 rounded-2xl">
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="hourglass_empty">hourglass_empty</span>
+<span class="font-headline-sm text-headline-sm text-white">Document Processing</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">75% Complete</span>
+</div>
+<div class="w-full bg-white/5 h-3 rounded-full overflow-hidden border border-white/5">
+<div class="bg-gradient-to-r from-primary to-secondary h-full w-[75%] rounded-full shadow-[0_0_15px_rgba(195,245,255,0.4)]"></div>
+</div>
+<div class="mt-4 flex justify-between text-xs text-on-surface-variant/70 font-label-md uppercase tracking-wider">
+<span>Scanning dependencies...</span>
+<span>ETA: 4 seconds</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Grid - More Tools -->
+<div class="mt-20">
+<h2 class="text-white font-headline-lg text-headline-lg mb-10 text-center">Power <span class="text-primary italic">Utilities</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="glass-panel p-8 rounded-2xl hover:border-primary/50 transition-all group active:scale-95">
+<span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="edit_document">edit_document</span>
+<h4 class="text-white font-headline-sm text-headline-sm mb-2">Edit PDF</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">Modify text and images directly within your PDF document.</p>
+</div>
+<div class="glass-panel p-8 rounded-2xl hover:border-primary/50 transition-all group active:scale-95">
+<span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="draw">draw</span>
+<h4 class="text-white font-headline-sm text-headline-sm mb-2">Digital Sign</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">Legally sign and request signatures on electronic documents.</p>
+</div>
+<div class="glass-panel p-8 rounded-2xl hover:border-primary/50 transition-all group active:scale-95">
+<span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform" data-icon="compress">compress</span>
+<h4 class="text-white font-headline-sm text-headline-sm mb-2">Compress</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">Reduce file size while maintaining the original visual fidelity.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- NavigationDrawer (Mobile Only Mockup) -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] hidden" id="mobile-drawer">
+<div class="bg-surface-dim h-full w-80 rounded-r-2xl border-r border-white/10 shadow-2xl flex flex-col py-8">
+<div class="px-6 mb-10">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img data-alt="A professional close-up portrait of a young tech professional with a friendly expression. The lighting is crisp and modern, featuring cool blue and white tones that match the premium glassmorphic UI. Minimalist digital art style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt1s7eU6hl86CwwV3JsSfKp5N0M6oMV7xslyrbmPhMkJGl-EA0MEr3ZX50UBvJADuyskIHykW30Va3qwbBFztKatz5JuKFHxG2k4CmbQN9rg-9OGsHWl0g5kd4gsdCqccpZz_mB_bYxeoSAD8g6VsUSbw9-KG4BDBChNYzcXit5L4kYMJ8JFnclRdRqznXS_6oAlGxn4AOD4iZgCdL5qk_YqJ4ONJWGToxivr3bIPbkli8DhfqfZ6nXXUMKl5P6ShZwoxn8-FOJVKO"/>
+</div>
+<div>
+<h4 class="text-white font-headline-sm text-headline-sm leading-tight">Power User</h4>
+<p class="text-primary text-sm font-label-md">Pro Member</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<div class="bg-secondary-container text-on-secondary-container rounded-lg p-3 flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="handyman">handyman</span>
+<span class="font-label-md">All Tools</span>
+</div>
+<div class="text-on-surface-variant hover:bg-surface-variant/50 transition-colors rounded-lg p-3 flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-label-md">Recently Used</span>
+</div>
+<div class="text-on-surface-variant hover:bg-surface-variant/50 transition-colors rounded-lg p-3 flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="font-label-md">Favorites</span>
+</div>
+<div class="text-on-surface-variant hover:bg-surface-variant/50 transition-colors rounded-lg p-3 flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md">Settings</span>
+</div>
+</nav>
+<div class="px-6 mt-auto">
+<span class="text-on-surface-variant/50 text-xs font-label-md">v1.2.0</span>
+</div>
+</div>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container/90 backdrop-blur-2xl border-t border-white/5 shadow-[0_-8px_30px_rgb(0,0,0,0.12)] flex justify-around items-center h-20 px-4 pb-safe">
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-md text-[10px] mt-1">Hub</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary font-bold bg-primary/10 rounded-xl px-4 py-1 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-md text-[10px] mt-1">Tools</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-[10px] mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

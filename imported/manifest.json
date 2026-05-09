@@ -1,0 +1,168 @@
+{
+    "importedAt":  "2026-05-09T19:22:18.7958439Z",
+    "projectId":  "11631451942961062889",
+    "projectName":  "projects/11631451942961062889",
+    "projectTitle":  "Universal Utility Hub",
+    "screens":  [
+                    {
+                        "index":  1,
+                        "title":  "Equinox Hub",
+                        "id":  "c0dca0dba1ed4bd3a3cf6d224d265d34",
+                        "name":  "projects/11631451942961062889/screens/c0dca0dba1ed4bd3a3cf6d224d265d34",
+                        "width":  "780",
+                        "height":  "6298",
+                        "deviceType":  "MOBILE",
+                        "html":  "screens/01-equinox-hub-c0dca0db/index.html",
+                        "screenshot":  "screens/01-equinox-hub-c0dca0db/screenshot.png",
+                        "rawMcp":  "raw-mcp/get_screen-c0dca0dba1ed4bd3a3cf6d224d265d34.json"
+                    },
+                    {
+                        "index":  2,
+                        "title":  "Browse Categories",
+                        "id":  "c9378eed24524165aa5d4176382a7bf3",
+                        "name":  "projects/11631451942961062889/screens/c9378eed24524165aa5d4176382a7bf3",
+                        "width":  "940",
+                        "height":  "6622",
+                        "deviceType":  "MOBILE",
+                        "html":  "screens/02-browse-categories-c9378eed/index.html",
+                        "screenshot":  "screens/02-browse-categories-c9378eed/screenshot.png",
+                        "rawMcp":  "raw-mcp/get_screen-c9378eed24524165aa5d4176382a7bf3.json"
+                    },
+                    {
+                        "index":  3,
+                        "title":  "PDF Converter",
+                        "id":  "12fd1fd23f424c70b20a9d3a34f30e52",
+                        "name":  "projects/11631451942961062889/screens/12fd1fd23f424c70b20a9d3a34f30e52",
+                        "width":  "780",
+                        "height":  "5384",
+                        "deviceType":  "MOBILE",
+                        "html":  "screens/03-pdf-converter-12fd1fd2/index.html",
+                        "screenshot":  "screens/03-pdf-converter-12fd1fd2/screenshot.png",
+                        "rawMcp":  "raw-mcp/get_screen-12fd1fd23f424c70b20a9d3a34f30e52.json"
+                    },
+                    {
+                        "index":  4,
+                        "title":  "YouTube Downloader",
+                        "id":  "83749a373c7a477fac8c1f8f9033f65f",
+                        "name":  "projects/11631451942961062889/screens/83749a373c7a477fac8c1f8f9033f65f",
+                        "width":  "780",
+                        "height":  "4548",
+                        "deviceType":  "MOBILE",
+                        "html":  "screens/04-youtube-downloader-83749a37/index.html",
+                        "screenshot":  "screens/04-youtube-downloader-83749a37/screenshot.png",
+                        "rawMcp":  "raw-mcp/get_screen-83749a373c7a477fac8c1f8f9033f65f.json"
+                    },
+                    {
+                        "index":  5,
+                        "title":  "My Dashboard",
+                        "id":  "b00bcc582e624b5bbdac78b672ebd583",
+                        "name":  "projects/11631451942961062889/screens/b00bcc582e624b5bbdac78b672ebd583",
+                        "width":  "780",
+                        "height":  "4368",
+                        "deviceType":  "MOBILE",
+                        "html":  "screens/05-my-dashboard-b00bcc58/index.html",
+                        "screenshot":  "screens/05-my-dashboard-b00bcc58/screenshot.png",
+                        "rawMcp":  "raw-mcp/get_screen-b00bcc582e624b5bbdac78b672ebd583.json"
+                    },
+                    {
+                        "index":  6,
+                        "title":  "HOME.jpeg",
+                        "id":  "14235748585932340029",
+                        "name":  "projects/11631451942961062889/screens/14235748585932340029",
+                        "width":  "736",
+                        "height":  "1104",
+                        "deviceType":  null,
+                        "html":  null,
+                        "screenshot":  "screens/06-home-jpeg-14235748/screenshot.png",
+                        "rawMcp":  "raw-mcp/get_screen-14235748585932340029.json"
+                    }
+                ],
+    "designSystems":  [
+                          {
+                              "index":  1,
+                              "title":  "Cyanide Glass",
+                              "id":  "d2abf1dc66d24ffd8ce4430261a53a6e",
+                              "name":  "assets/d2abf1dc66d24ffd8ce4430261a53a6e",
+                              "path":  "design-systems/01-cyanide-glass-d2abf1dc"
+                          }
+                      ],
+    "downloadedExternalAssets":  [
+                                     {
+                                         "source":  "project.thumbnailScreenshot",
+                                         "url":  "https://lh3.googleusercontent.com/aida/ADBb0ugM3HaXfTsTIVvka4FT_27k9dJxARvXRWsMHZiGRhBpuwhy8F-ur4meDXJ_EbnZ5n8QciqJb3PmtM_1WDJ77063YWSzVmBHqhASKt1wT6HY5q_-eOrx26lHv5L_uFeb6jFvqgHUw-DlWjGdlOsZqerjm2h_1qSemYco8GyLQiYqo1Kz_9rEEah9vmWHqbOaqrBKmJVCgvXwpQlttemRRVOaEaj_QxO6uPnUnjfuN4B-RAFwpvVJYZAzcmgS",
+                                         "path":  "assets/project-thumbnail.png"
+                                     },
+                                     {
+                                         "source":  "html-reference",
+                                         "url":  "https://cdn.tailwindcss.com?plugins=forms,container-queries",
+                                         "path":  "assets/external-001.bin",
+                                         "downloaded":  true
+                                     },
+                                     {
+                                         "source":  "html-reference",
+                                         "url":  "https://lh3.googleusercontent.com/aida-public/AB6AXuC9hkEZWCy_feF4BXc8adZL9EvV4GGYdIMHOQpx7OIdm2pVtRC91AYE1RhMZHJ1TRYzLAxtKskLkmSFKvKtXXA0wlJZLzpSqSQmULYrzVkItpSMHx5Ymjw1wvB0OImv-01lV53uPpteR3IaexTm3OLO3aaRbucz7I378itnGBOFfmefi5bXyfFmE2jMEi39u18DcvmvQVMDqNX0IH6Se5EtegENGrtLCLoSmbOOJhHMVN-02cvviEslXbJIIq836KRWLdSBVyiYYQhG",
+                                         "path":  "assets/external-002.bin",
+                                         "downloaded":  true
+                                     },
+                                     {
+                                         "source":  "html-reference",
+                                         "url":  "https://lh3.googleusercontent.com/aida-public/AB6AXuCq27n7VhfYXpHmflukFwG_w_2C7i_1dJxPci9PrCLjXROD1UqDtn6L6Ic3A8Px38kyq_ILirboVHgGrJPoe7h6rvuEGq3PJh3K8ySGQAVgsUpsEJ8Rk6h2uQT0mU-CNLmQiQsCUe3F7wYiZsfLYv_5_PLMbngL0yxhOHXQXTG5Ci0QPqsHvhfEYP9jnaeLNzFxlDfIhIRw9CpPJAijPoSyRy-6mPXMwrpbNPVIhUx2ZZl6U3bn4FV1RD6lpOBbK6nARulRf_LuLt02",
+                                         "path":  "assets/external-003.bin",
+                                         "downloaded":  true
+                                     },
+                                     {
+                                         "source":  "html-reference",
+                                         "url":  "https://lh3.googleusercontent.com/aida-public/AB6AXuAQjtbWZohcdHHBh3Mfm3Et3oZ4_N7F3HRodgS0xWHn9w8YGwMWX4nhLYUVjyqasaEEaBqblT9mURx-WHVyxJEXg65fadlZSj7HyfwYo5DPQi9oTf52BBfawu8hHd9t64LCyznrtTcl_ozXCyh-8t0gzBkMlcdoOqBQhjOEvdsLn2nZAoinj61idABz9s3_z7FC1A4PdNF70l4tzZ7T5yEfNyXcdL6B_XuGXhQHtuGWNOy9NCUI2x383fkOSgJQywaRuY9sNTQLcXm1",
+                                         "path":  "assets/external-004.bin",
+                                         "downloaded":  true
+                                     },
+                                     {
+                                         "source":  "html-reference",
+                                         "url":  "https://lh3.googleusercontent.com/aida-public/AB6AXuBOF13K5auPEShBfmVciNoxUPpHYEFOPV-tXpJngpXlVSPT6sX1jzcS_nLxD5yBvvvuYgevMYILRYIzU_DKx3l2ME1Uognruj0MtWEq0saZxhGxwYHdiW9TnmZv0lZbO5CGTsxMfL1umwvsClO5TeTeeQq82OH8GEqXulFTvLGALIst740cxo-GGeImWWUKIPggpSp79MSyFcnevVia7IjQjXi7Mzz6wz-T47URe5WSmcCr3b_xOROrSNlbZR5npFTGTJEAc0ABUmn8",
+                                         "path":  "assets/external-005.bin",
+                                         "downloaded":  true
+                                     },
+                                     {
+                                         "source":  "html-reference",
+                                         "url":  "https://lh3.googleusercontent.com/aida-public/AB6AXuAaDcl9L7xr2luQJaYtfQDTSixsNGHnLakfdj5hohuHcH0kXVd-sxwxJWOzkUnnNk94ape_bl1xFn63xoQ2B87_U5xTgw1NSKFk0N4IVutxs46djj98Qb0MLKGUiOovQbJ0LIN4JB3S1OksCGygcYLyZaGV5zIvZJcuwjoOnZ-hrW8Kb5EM3DRuNjdvog5pJO2IkVfMiNP1J_sZNcIPPUWssHYUE0PoDdWV_PBwdg-lKL9ZE0wGa8tM1u1i6NsFoGK-UAdRtWukH18w",
+                                         "path":  "assets/external-006.bin",
+                                         "downloaded":  true
+                                     },
+                                     {
+                                         "source":  "html-reference",
+                                         "url":  "https://lh3.googleusercontent.com/aida-public/AB6AXuA0kHgBwnl8BRDueNvEryDRK3t2b577eI0ciGW3xhJQ70fK8JHavnrOnoepqkq8KpoyJzPVdai9FycS99a9Gey4ZAXKRz5Hm87lN5G96FITAXpye15Gw2_BuOc0HjRV60_hzgzzKv1lEe9PlZuB4MruHjhxUU2DyYjUiO-BJXmHlTGPw8Tew2KnfIFYDI4ganA6upaU1oUSJj54gnmpZldGDzmw3p_zq27RXFaouQhGuGP5YlhY9Xrx1eCpIqS_o54vlREf0ZJ2mMLG",
+                                         "path":  "assets/external-007.bin",
+                                         "downloaded":  true
+                                     },
+                                     {
+                                         "source":  "html-reference",
+                                         "url":  "https://www.transparenttextures.com/patterns/carbon-fibre.png",
+                                         "path":  "assets/external-008.png",
+                                         "downloaded":  true
+                                     },
+                                     {
+                                         "source":  "html-reference",
+                                         "url":  "https://lh3.googleusercontent.com/aida-public/AB6AXuCK1LBvORchWxP5OViOElb13BBZHa5KbweyDOnJE-0AlRiRhgB0xI4ESGsxLwXQ23JjUiFgUrrDsxqMAL-rRXQU7u4h6TeINsY31Af68yjpijTLu97yMbw7FBKYuzgdEuRCJ8QFLe59t-vr5dbjfjCsjjJ2wIQDqsw4IKJCMSWWpHCS7OzNpOQ9eCfW7eCAjC2pIjSR7isq28njj4zxBhzKAjMJHWrCjqfqFPRa_F8oyaUOuzFUr_wAoW83kMLIzFuUS07qsv-fi9cJ",
+                                         "path":  "assets/external-009.bin",
+                                         "downloaded":  true
+                                     },
+                                     {
+                                         "source":  "html-reference",
+                                         "url":  "https://lh3.googleusercontent.com/aida-public/AB6AXuCt1s7eU6hl86CwwV3JsSfKp5N0M6oMV7xslyrbmPhMkJGl-EA0MEr3ZX50UBvJADuyskIHykW30Va3qwbBFztKatz5JuKFHxG2k4CmbQN9rg-9OGsHWl0g5kd4gsdCqccpZz_mB_bYxeoSAD8g6VsUSbw9-KG4BDBChNYzcXit5L4kYMJ8JFnclRdRqznXS_6oAlGxn4AOD4iZgCdL5qk_YqJ4ONJWGToxivr3bIPbkli8DhfqfZ6nXXUMKl5P6ShZwoxn8-FOJVKO",
+                                         "path":  "assets/external-010.bin",
+                                         "downloaded":  true
+                                     },
+                                     {
+                                         "source":  "html-reference",
+                                         "url":  "https://lh3.googleusercontent.com/aida-public/AB6AXuA2684IwNpPa2B0uqgKtAxjqym_hnu5fq28cnYEGF2hqrV6dQFQtXADlZ8ljwvfMzlwDMHgd3ZHjdgFt76k9p-dB8_xGO4s4yaa0DhSbE9xkni_GI22H2PXA4NevyyJ4vdgPV6ltaBYX8GsINq4ZCfKt_IMhZwenJk3G6Z2Lq-us8IskdlTmxpZ3b_qxa-rVcKKmj02l-zoL_PePW7CdOLX-T1k9EWZ_Ax_IkUk-7ALKZ7ZpHFWrT7idqG5OI4Kuzob8e1V2CIK4ZyX",
+                                         "path":  "assets/external-011.bin",
+                                         "downloaded":  true
+                                     },
+                                     {
+                                         "source":  "html-reference",
+                                         "url":  "https://lh3.googleusercontent.com/aida-public/AB6AXuClpbK9QlhIazUqihv2Z2_8QGOzsjcp52PU7z5yy1x8K2_PEufkVtcmm7UkZr82K6LP2vUibm-Y2JDa7N9eXqSU6ACgZQ4nRnZXySxu1hJfYVkiO1q6pRGHVVvdf9MnF2_AfK1n7-rLyKfEtVaY1ViAjSV_BO0vNtP-j5eITu0wd8z1Wh6t3pXcBLTvXTrzNerFouIi4fr2C7nG69Wvk7Mz-8aNikjZP5wG6Vtdj8_4GTgrBO7HWcG4S5sHG8ZWR-LcM-LJCF7a0L-X",
+                                         "path":  "assets/external-012.bin",
+                                         "downloaded":  true
+                                     }
+                                 ]
+}

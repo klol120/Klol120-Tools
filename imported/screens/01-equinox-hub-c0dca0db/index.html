@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Equinox | High-Performance Utility Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#33394c",
+                    "on-tertiary": "#233148",
+                    "tertiary-fixed-dim": "#b9c7e4",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-high": "#23293c",
+                    "secondary-container": "#0050ee",
+                    "inverse-surface": "#dce1fb",
+                    "primary": "#c3f5ff",
+                    "error": "#ffb4ab",
+                    "surface-dim": "#0c1324",
+                    "error-container": "#93000a",
+                    "tertiary": "#e6edff",
+                    "on-tertiary-container": "#4c5973",
+                    "on-secondary-container": "#d4dbff",
+                    "inverse-primary": "#006875",
+                    "background": "#0c1324",
+                    "surface-container": "#191f31",
+                    "on-primary": "#00363d",
+                    "on-tertiary-fixed": "#0d1c32",
+                    "primary-fixed-dim": "#00daf3",
+                    "surface-variant": "#2e3447",
+                    "surface": "#0c1324",
+                    "outline-variant": "#3b494c",
+                    "secondary": "#b6c4ff",
+                    "on-primary-container": "#00626e",
+                    "inverse-on-surface": "#2a3043",
+                    "on-tertiary-fixed-variant": "#39475f",
+                    "primary-container": "#00e5ff",
+                    "on-surface": "#dce1fb",
+                    "on-error": "#690005",
+                    "on-secondary-fixed": "#001550",
+                    "secondary-fixed-dim": "#b6c4ff",
+                    "surface-container-highest": "#2e3447",
+                    "surface-container-low": "#151b2d",
+                    "on-background": "#dce1fb",
+                    "on-primary-fixed": "#001f24",
+                    "on-secondary": "#002780",
+                    "outline": "#849396",
+                    "surface-tint": "#00daf3",
+                    "on-primary-fixed-variant": "#004f58",
+                    "on-secondary-fixed-variant": "#003ab3",
+                    "on-surface-variant": "#bac9cc",
+                    "primary-fixed": "#9cf0ff",
+                    "secondary-fixed": "#dce1ff",
+                    "tertiary-container": "#c3d1ef",
+                    "tertiary-fixed": "#d6e3ff",
+                    "surface-container-lowest": "#070d1f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "container-max": "1280px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Plus Jakarta Sans"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .glass-card {
+        background: rgba(25, 31, 49, 0.6);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.3s ease;
+      }
+      .glass-card:hover {
+        border-color: #00daf3;
+        box-shadow: 0 0 20px rgba(0, 218, 243, 0.15);
+        transform: translateY(-4px);
+      }
+      .gradient-border-mask {
+        position: relative;
+      }
+      .gradient-border-mask::after {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        padding: 1px;
+        border-radius: inherit;
+        background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+      }
+      .glow-bg {
+        background: radial-gradient(circle at top center, rgba(0, 218, 243, 0.08) 0%, transparent 70%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/30 min-h-screen">
+<!-- TopAppBar from JSON -->
+<header class="bg-background/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/10 shadow-lg shadow-primary/5">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary active:scale-95 transition-transform cursor-pointer">menu</span>
+<span class="font-headline-md text-headline-md font-bold tracking-tight text-primary">Equinox</span>
+</div>
+<!-- Search-Centric Navigation Shell -->
+<div class="hidden md:flex flex-1 max-w-xl mx-8 relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant/50">search</span>
+<input class="w-full bg-surface-container-lowest/50 border-none rounded-full py-2.5 pl-12 pr-4 text-on-surface focus:ring-1 focus:ring-primary/50 transition-all placeholder:text-on-surface-variant/40" placeholder="Search for tools, workflows, or templates..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden lg:flex items-center gap-6 font-label-md text-label-md uppercase tracking-widest text-on-surface-variant">
+<a class="text-primary hover:text-primary transition-colors duration-300" href="#">Hub</a>
+<a class="hover:text-primary transition-colors duration-300" href="#">Explore</a>
+<a class="hover:text-primary transition-colors duration-300" href="#">Solutions</a>
+</nav>
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-transform">search</span>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto glow-bg">
+<!-- Hero / Recently Used Section -->
+<section class="mb-16">
+<div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-2 text-white">Digital Utility <span class="text-primary">Precision</span></h2>
+<p class="text-on-surface-variant font-body-lg max-w-xl">Your high-performance toolkit for seamless digital transformation and data manipulation.</p>
+</div>
+<div class="flex gap-2">
+<button class="bg-primary px-6 py-2 rounded-full text-on-primary font-bold active:scale-95 transition-all text-label-md">New Workflow</button>
+<button class="bg-surface-container border border-white/10 px-6 py-2 rounded-full text-on-surface font-medium hover:bg-white/5 active:scale-95 transition-all text-label-md">View Analytics</button>
+</div>
+</div>
+<!-- Recently Used Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Recently Used Tool 1 -->
+<div class="md:col-span-2 glass-card rounded-2xl p-8 flex flex-col justify-between min-h-[320px] relative overflow-hidden group">
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">movie</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-white">YouTube Downloader</h3>
+<p class="text-on-surface-variant text-label-md">Last used 2 hours ago</p>
+</div>
+</div>
+<p class="text-on-surface/80 max-w-md font-body-md mb-8">Process high-fidelity video content with automated metadata extraction and adaptive bitrate conversion.</p>
+</div>
+<div class="flex items-center gap-4 relative z-10">
+<button class="bg-primary/10 border border-primary/20 hover:bg-primary hover:text-on-primary px-8 py-3 rounded-xl transition-all duration-300 text-primary font-bold">Open Tool</button>
+<span class="text-on-surface-variant text-label-md flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-400"></span> System Ready</span>
+</div>
+<!-- Decorative BG Graphic -->
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all"></div>
+</div>
+<!-- Recently Used Tool 2 -->
+<div class="glass-card rounded-2xl p-8 flex flex-col justify-between min-h-[320px] relative overflow-hidden group">
+<div class="relative z-10">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">picture_as_pdf</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-white mb-2">PDF Converter</h3>
+<p class="text-on-surface-variant text-label-md mb-6">Compress and merge 4K documents.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant px-2 py-1 rounded text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">OCR</span>
+<span class="bg-surface-variant px-2 py-1 rounded text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">BATCH</span>
+</div>
+</div>
+<button class="bg-white/5 border border-white/10 hover:border-primary/50 px-6 py-3 rounded-xl transition-all duration-300 text-white font-bold relative z-10">Resume Task</button>
+</div>
+</div>
+</section>
+<!-- Category Filter Chips -->
+<section class="mb-10 flex items-center gap-4 overflow-x-auto pb-4 no-scrollbar">
+<button class="bg-gradient-to-r from-primary to-secondary px-6 py-2 rounded-full text-surface font-bold text-label-md whitespace-nowrap">All Tools</button>
+<button class="bg-surface-container/50 border border-white/5 px-6 py-2 rounded-full text-on-surface-variant hover:text-white transition-colors text-label-md whitespace-nowrap">Video Editing</button>
+<button class="bg-surface-container/50 border border-white/5 px-6 py-2 rounded-full text-on-surface-variant hover:text-white transition-colors text-label-md whitespace-nowrap">File Management</button>
+<button class="bg-surface-container/50 border border-white/5 px-6 py-2 rounded-full text-on-surface-variant hover:text-white transition-colors text-label-md whitespace-nowrap">Development</button>
+<button class="bg-surface-container/50 border border-white/5 px-6 py-2 rounded-full text-on-surface-variant hover:text-white transition-colors text-label-md whitespace-nowrap">Security</button>
+<button class="bg-surface-container/50 border border-white/5 px-6 py-2 rounded-full text-on-surface-variant hover:text-white transition-colors text-label-md whitespace-nowrap">AI Integrations</button>
+</section>
+<!-- Featured Tools Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Tool Card 1 -->
+<div class="glass-card rounded-2xl p-6 group">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-primary transition-transform duration-500 group-hover:scale-110" style="font-variation-settings: 'FILL' 0;">shield_lock</span>
+<span class="material-symbols-outlined text-on-surface-variant/40">more_vert</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-white mb-2">Hash Encoder</h4>
+<p class="text-on-surface-variant text-body-md mb-8">SHA-256 and AES-256 encryption for secure data handling.</p>
+<div class="h-1 bg-surface-variant rounded-full overflow-hidden mb-4">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+<div class="flex justify-between items-center text-label-md">
+<span class="text-on-surface-variant">4.8k uses</span>
+<a class="text-primary font-bold flex items-center gap-1" href="#">Launch <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+<!-- Tool Card 2 -->
+<div class="glass-card rounded-2xl p-6 group">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-primary transition-transform duration-500 group-hover:scale-110" style="font-variation-settings: 'FILL' 0;">code</span>
+<span class="material-symbols-outlined text-on-surface-variant/40">more_vert</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-white mb-2">JSON Formatter</h4>
+<p class="text-on-surface-variant text-body-md mb-8">Prettify and validate complex object structures instantly.</p>
+<div class="h-1 bg-surface-variant rounded-full overflow-hidden mb-4">
+<div class="h-full bg-primary w-full"></div>
+</div>
+<div class="flex justify-between items-center text-label-md">
+<span class="text-on-surface-variant">12.2k uses</span>
+<a class="text-primary font-bold flex items-center gap-1" href="#">Launch <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+<!-- Tool Card 3 -->
+<div class="glass-card rounded-2xl p-6 group">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-primary transition-transform duration-500 group-hover:scale-110" style="font-variation-settings: 'FILL' 0;">image</span>
+<span class="material-symbols-outlined text-on-surface-variant/40">more_vert</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-white mb-2">Image Upscaler</h4>
+<p class="text-on-surface-variant text-body-md mb-8">AI-powered 4x resolution enhancement with sharp edges.</p>
+<div class="h-1 bg-surface-variant rounded-full overflow-hidden mb-4">
+<div class="h-full bg-primary w-1/4"></div>
+</div>
+<div class="flex justify-between items-center text-label-md">
+<span class="text-on-surface-variant">3.1k uses</span>
+<a class="text-primary font-bold flex items-center gap-1" href="#">Launch <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+<!-- Tool Card 4 -->
+<div class="glass-card rounded-2xl p-6 group">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-primary transition-transform duration-500 group-hover:scale-110" style="font-variation-settings: 'FILL' 0;">terminal</span>
+<span class="material-symbols-outlined text-on-surface-variant/40">more_vert</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-white mb-2">CLI Automator</h4>
+<p class="text-on-surface-variant text-body-md mb-8">Run remote terminal sequences via secure web tunnel.</p>
+<div class="h-1 bg-surface-variant rounded-full overflow-hidden mb-4">
+<div class="h-full bg-primary w-1/2"></div>
+</div>
+<div class="flex justify-between items-center text-label-md">
+<span class="text-on-surface-variant">900 uses</span>
+<a class="text-primary font-bold flex items-center gap-1" href="#">Launch <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</section>
+<!-- Visual Anchor / Image Section -->
+<section class="mt-20">
+<div class="relative w-full h-[500px] rounded-3xl overflow-hidden border border-white/10 group">
+<img alt="Abstract blue energy" class="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" data-alt="An abstract, high-fidelity digital rendering featuring fluid, crystalline structures glowing with a deep electric blue and cyan light. The scene is set in an infinite dark navy space, with sharp highlights reflecting off the glass-like surfaces, creating a sense of digital precision and sophisticated technology. Soft light glows from the core of the shapes, illuminating thin, razor-sharp edges and translucent geometric layers. The overall aesthetic is minimalist, cinematic, and premium, perfectly matching a high-performance utility platform theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9hkEZWCy_feF4BXc8adZL9EvV4GGYdIMHOQpx7OIdm2pVtRC91AYE1RhMZHJ1TRYzLAxtKskLkmSFKvKtXXA0wlJZLzpSqSQmULYrzVkItpSMHx5Ymjw1wvB0OImv-01lV53uPpteR3IaexTm3OLO3aaRbucz7I378itnGBOFfmefi5bXyfFmE2jMEi39u18DcvmvQVMDqNX0IH6Se5EtegENGrtLCLoSmbOOJhHMVN-02cvviEslXbJIIq836KRWLdSBVyiYYQhG"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="absolute bottom-12 left-12 max-w-2xl">
+<h3 class="font-display-lg text-headline-lg text-white mb-4">Unlocking the Full Potential of <span class="italic text-secondary">Your Process</span></h3>
+<p class="text-on-surface font-body-lg mb-8 opacity-80">Join 50k+ pro users who leverage Equinox to automate 1,000,000+ weekly tasks across 12 sectors.</p>
+<div class="flex gap-4">
+<div class="flex -space-x-3">
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-background" data-alt="Close up portrait of a tech professional man with a friendly smile, clean lighting, and a soft blurred office background, professional digital avatar style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq27n7VhfYXpHmflukFwG_w_2C7i_1dJxPci9PrCLjXROD1UqDtn6L6Ic3A8Px38kyq_ILirboVHgGrJPoe7h6rvuEGq3PJh3K8ySGQAVgsUpsEJ8Rk6h2uQT0mU-CNLmQiQsCUe3F7wYiZsfLYv_5_PLMbngL0yxhOHXQXTG5Ci0QPqsHvhfEYP9jnaeLNzFxlDfIhIRw9CpPJAijPoSyRy-6mPXMwrpbNPVIhUx2ZZl6U3bn4FV1RD6lpOBbK6nARulRf_LuLt02"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-background" data-alt="Portrait of a modern female software engineer with glasses, looking confidently at the camera, clean cinematic lighting with subtle blue and orange tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQjtbWZohcdHHBh3Mfm3Et3oZ4_N7F3HRodgS0xWHn9w8YGwMWX4nhLYUVjyqasaEEaBqblT9mURx-WHVyxJEXg65fadlZSj7HyfwYo5DPQi9oTf52BBfawu8hHd9t64LCyznrtTcl_ozXCyh-8t0gzBkMlcdoOqBQhjOEvdsLn2nZAoinj61idABz9s3_z7FC1A4PdNF70l4tzZ7T5yEfNyXcdL6B_XuGXhQHtuGWNOy9NCUI2x383fkOSgJQywaRuY9sNTQLcXm1"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-background" data-alt="Portrait of a creative designer with a stylish look, wearing a dark turtleneck, neutral background with professional high-key lighting for a clean UI profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOF13K5auPEShBfmVciNoxUPpHYEFOPV-tXpJngpXlVSPT6sX1jzcS_nLxD5yBvvvuYgevMYILRYIzU_DKx3l2ME1Uognruj0MtWEq0saZxhGxwYHdiW9TnmZv0lZbO5CGTsxMfL1umwvsClO5TeTeeQq82OH8GEqXulFTvLGALIst740cxo-GGeImWWUKIPggpSp79MSyFcnevVia7IjQjXi7Mzz6wz-T47URe5WSmcCr3b_xOROrSNlbZR5npFTGTJEAc0ABUmn8"/>
+</div>
+<p class="text-on-surface-variant text-label-md self-center">Trusted by world-class teams</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar from JSON -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container/90 backdrop-blur-2xl dark:bg-surface-container/90 border-t border-white/5 shadow-[0_-8px_30px_rgb(0,0,0,0.12)]">
+<div class="flex justify-around items-center h-20 px-4 pb-safe max-w-container-max mx-auto">
+<a class="flex flex-col items-center justify-center text-primary font-bold bg-primary/10 rounded-xl px-4 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-md text-label-md mt-1">Hub</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-white/5 transition-all active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-md text-label-md mt-1">Categories</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-white/5 transition-all active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md mt-1">Dashboard</span>
+</a>
+</div>
+</nav>
+<!-- Contextual FAB (Hidden on Landing per rules, but prepared if needed) -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-on-primary rounded-2xl shadow-xl shadow-primary/20 flex items-center justify-center active:scale-90 transition-all z-40 md:hidden">
+<span class="material-symbols-outlined">add</span>
+</button>
+</body></html>

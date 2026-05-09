@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Equinox | Categories Browser</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#33394c",
+                      "on-tertiary": "#233148",
+                      "tertiary-fixed-dim": "#b9c7e4",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-high": "#23293c",
+                      "secondary-container": "#0050ee",
+                      "inverse-surface": "#dce1fb",
+                      "primary": "#c3f5ff",
+                      "error": "#ffb4ab",
+                      "surface-dim": "#0c1324",
+                      "error-container": "#93000a",
+                      "tertiary": "#e6edff",
+                      "on-tertiary-container": "#4c5973",
+                      "on-secondary-container": "#d4dbff",
+                      "inverse-primary": "#006875",
+                      "background": "#0c1324",
+                      "surface-container": "#191f31",
+                      "on-primary": "#00363d",
+                      "on-tertiary-fixed": "#0d1c32",
+                      "primary-fixed-dim": "#00daf3",
+                      "surface-variant": "#2e3447",
+                      "surface": "#0c1324",
+                      "outline-variant": "#3b494c",
+                      "secondary": "#b6c4ff",
+                      "on-primary-container": "#00626e",
+                      "inverse-on-surface": "#2a3043",
+                      "on-tertiary-fixed-variant": "#39475f",
+                      "primary-container": "#00e5ff",
+                      "on-surface": "#dce1fb",
+                      "on-error": "#690005",
+                      "on-secondary-fixed": "#001550",
+                      "secondary-fixed-dim": "#b6c4ff",
+                      "surface-container-highest": "#2e3447",
+                      "surface-container-low": "#151b2d",
+                      "on-background": "#dce1fb",
+                      "on-primary-fixed": "#001f24",
+                      "on-secondary": "#002780",
+                      "outline": "#849396",
+                      "surface-tint": "#00daf3",
+                      "on-primary-fixed-variant": "#004f58",
+                      "on-secondary-fixed-variant": "#003ab3",
+                      "on-surface-variant": "#bac9cc",
+                      "primary-fixed": "#9cf0ff",
+                      "secondary-fixed": "#dce1ff",
+                      "tertiary-container": "#c3d1ef",
+                      "tertiary-fixed": "#d6e3ff",
+                      "surface-container-lowest": "#070d1f"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "container-max": "1280px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Plus Jakarta Sans"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "body-md": ["Inter"],
+                      "headline-sm": ["Plus Jakarta Sans"],
+                      "label-md": ["Inter"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0c1324;
+            color: #dce1fb;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-cyanide {
+            background: rgba(25, 31, 49, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(195, 245, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .glass-cyanide:hover {
+            border-color: rgba(195, 245, 255, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px 0 rgba(0, 218, 243, 0.1);
+        }
+        .radial-glow {
+            background: radial-gradient(circle at 50% 0%, rgba(0, 229, 255, 0.15) 0%, transparent 70%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #c3f5ff 0%, #00daf3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-btn {
+            background: linear-gradient(135deg, #00daf3 0%, #0050ee 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen overflow-x-hidden selection:bg-primary-container selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl dark:bg-background/80 border-b border-white/10 shadow-lg shadow-primary/5">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-primary">
+<span class="material-symbols-outlined text-headline-sm" data-icon="menu">menu</span>
+</button>
+<span class="font-headline-md text-headline-md font-bold tracking-tight text-primary">Equinox</span>
+</div>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Pricing</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Roadmap</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Blog</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant text-[20px]" data-icon="search">search</span>
+<input class="bg-black/30 border-0 border-b border-white/10 focus:border-primary-container focus:ring-0 text-body-md py-2 pl-10 pr-4 rounded-t-lg w-64 transition-all" placeholder="Explore tools..." type="text"/>
+</div>
+<button class="active:scale-95 transition-transform text-primary sm:hidden">
+<span class="material-symbols-outlined text-headline-sm" data-icon="search">search</span>
+</button>
+<button class="gradient-btn px-6 py-2 rounded-full font-label-md text-black font-bold active:scale-95 transition-all shadow-lg shadow-primary/20">Contact us</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 radial-glow px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Hero Title Section -->
+<section class="mb-12">
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-primary/10 text-primary-container px-3 py-1 rounded-full text-[12px] font-bold tracking-widest uppercase">Directory</span>
+<div class="h-[1px] flex-grow bg-gradient-to-r from-primary/20 to-transparent"></div>
+</div>
+<h1 class="font-display-lg text-display-lg md:text-headline-lg gradient-text leading-tight mb-4">
+                Browse Solutions by <span class="italic font-normal">Domain</span>
+</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                Unlock high-performance utilities specifically engineered for digital precision. Select a category to explore our ecosystem of professional-grade tools.
+            </p>
+</section>
+<!-- Category Filters -->
+<section class="mb-12 flex flex-wrap gap-3">
+<button class="px-6 py-2 rounded-full gradient-btn text-on-primary-fixed font-bold font-label-md active:scale-95 transition-all">All Collections</button>
+<button class="px-6 py-2 rounded-full glass-cyanide text-on-surface-variant border border-white/10 hover:text-primary hover:border-primary/40 font-label-md transition-all">Enterprise</button>
+<button class="px-6 py-2 rounded-full glass-cyanide text-on-surface-variant border border-white/10 hover:text-primary hover:border-primary/40 font-label-md transition-all">Automation</button>
+<button class="px-6 py-2 rounded-full glass-cyanide text-on-surface-variant border border-white/10 hover:text-primary hover:border-primary/40 font-label-md transition-all">Analytics</button>
+<button class="px-6 py-2 rounded-full glass-cyanide text-on-surface-variant border border-white/10 hover:text-primary hover:border-primary/40 font-label-md transition-all">Open Source</button>
+</section>
+<!-- Categories Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Video Category - Featured Large -->
+<div class="md:col-span-8 group cursor-pointer">
+<div class="glass-cyanide p-8 rounded-2xl relative overflow-hidden h-full transition-all flex flex-col justify-between min-h-[400px]">
+<div class="absolute -right-12 -top-12 w-64 h-64 bg-primary/10 rounded-full blur-[80px] group-hover:bg-primary/20 transition-all"></div>
+<div>
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary text-[40px]" data-icon="video_library" style="font-variation-settings: 'FILL' 1;">video_library</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Video</h3>
+<p class="text-body-md text-on-surface-variant max-w-md">Professional-grade encoding, real-time stream processing, and high-fidelity video mastering tools for high-bandwidth environments.</p>
+</div>
+<div class="flex items-center gap-4 mt-8">
+<span class="text-label-md font-bold text-primary group-hover:translate-x-2 transition-transform">Explore 12 tools</span>
+<span class="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<div class="mt-8 flex gap-4 overflow-hidden">
+<img class="w-32 h-20 object-cover rounded-lg border border-white/10" data-alt="A professional video editing suite with multiple glowing monitors displaying complex timelines and color grading wheels in a dark studio. The lighting is dominated by deep cyan and electric blue hues, creating a technical and high-performance atmosphere consistent with a digital utility platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaDcl9L7xr2luQJaYtfQDTSixsNGHnLakfdj5hohuHcH0kXVd-sxwxJWOzkUnnNk94ape_bl1xFn63xoQ2B87_U5xTgw1NSKFk0N4IVutxs46djj98Qb0MLKGUiOovQbJ0LIN4JB3S1OksCGygcYLyZaGV5zIvZJcuwjoOnZ-hrW8Kb5EM3DRuNjdvog5pJO2IkVfMiNP1J_sZNcIPPUWssHYUE0PoDdWV_PBwdg-lKL9ZE0wGa8tM1u1i6NsFoGK-UAdRtWukH18w"/>
+<img class="w-32 h-20 object-cover rounded-lg border border-white/10" data-alt="Macro shot of a high-end cinema camera lens focusing on a digital display with technical readouts. The image features sharp contrasts, vibrant blue backlighting, and a premium aesthetic focusing on precision and high-performance media production equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0kHgBwnl8BRDueNvEryDRK3t2b577eI0ciGW3xhJQ70fK8JHavnrOnoepqkq8KpoyJzPVdai9FycS99a9Gey4ZAXKRz5Hm87lN5G96FITAXpye15Gw2_BuOc0HjRV60_hzgzzKv1lEe9PlZuB4MruHjhxUU2DyYjUiO-BJXmHlTGPw8Tew2KnfIFYDI4ganA6upaU1oUSJj54gnmpZldGDzmw3p_zq27RXFaouQhGuGP5YlhY9Xrx1eCpIqS_o54vlREf0ZJ2mMLG"/>
+</div>
+</div>
+</div>
+<!-- Document Category -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="glass-cyanide p-8 rounded-2xl h-full transition-all flex flex-col justify-between">
+<div>
+<div class="w-16 h-16 rounded-2xl bg-secondary-container/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-secondary text-[40px]" data-icon="description" style="font-variation-settings: 'FILL' 1;">description</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Document</h3>
+<p class="text-body-md text-on-surface-variant">OCR extraction, semantic parsing, and secure archival systems for enterprise scale datasets.</p>
+</div>
+<div class="flex items-center gap-4 mt-8">
+<span class="text-label-md font-bold text-primary">8 tools available</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Productivity Category -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="glass-cyanide p-8 rounded-2xl h-full transition-all flex flex-col justify-between">
+<div>
+<div class="w-16 h-16 rounded-2xl bg-tertiary-container/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[40px]" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Productivity</h3>
+<p class="text-body-md text-on-surface-variant">Workflow automation engines and deep-focus task management modules for power users.</p>
+</div>
+<div class="mt-8">
+<div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full w-2/3 bg-primary rounded-full shadow-[0_0_10px_rgba(0,229,255,0.5)]"></div>
+</div>
+<p class="text-[12px] text-on-surface-variant/60 mt-2">68% system optimization reached</p>
+</div>
+</div>
+</div>
+<!-- Developer Category -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="glass-cyanide p-8 rounded-2xl h-full transition-all border-primary/20 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+<div class="relative z-10">
+<div class="w-16 h-16 rounded-2xl bg-primary-container/10 flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary-container text-[40px]" data-icon="code">code</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Developer</h3>
+<p class="text-body-md text-on-surface-variant">API orchestrators, container monitoring, and headless deployment toolkits for rapid scaling.</p>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded text-primary">REST</span>
+<span class="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded text-primary">GraphQL</span>
+<span class="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded text-primary">Docker</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Images Category -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="glass-cyanide p-8 rounded-2xl h-full transition-all flex flex-col justify-between">
+<div>
+<div class="w-16 h-16 rounded-2xl bg-secondary-fixed/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-[40px]" data-icon="image" style="font-variation-settings: 'FILL' 1;">image</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Images</h3>
+<p class="text-body-md text-on-surface-variant">Non-destructive batch processing, AI-driven upscaling, and dynamic asset transformation.</p>
+</div>
+<div class="mt-8 flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-background bg-primary/20"></div>
+<div class="w-8 h-8 rounded-full border-2 border-background bg-secondary/20"></div>
+<div class="w-8 h-8 rounded-full border-2 border-background bg-tertiary/20"></div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Contact Glass Card -->
+<section class="mt-20 glass-cyanide p-10 rounded-3xl text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
+<h2 class="font-headline-md text-headline-md text-primary mb-4 relative z-10">Can't find what you need?</h2>
+<p class="text-body-md text-on-surface-variant mb-8 max-w-xl mx-auto relative z-10">Our engineering team is constantly shipping new performance modules. Let us know what you're building.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+<input class="bg-black/40 border-0 border-b border-outline focus:border-primary focus:ring-0 px-6 py-3 rounded-t-lg min-w-[300px] text-body-md" placeholder="Enter your email" type="email"/>
+<button class="gradient-btn px-10 py-3 rounded-full font-bold text-black active:scale-95 transition-all">Request Access</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container/90 backdrop-blur-2xl dark:bg-surface-container/90 border-t border-white/5 rounded-t-xl shadow-[0_-8px_30px_rgb(0,0,0,0.12)]">
+<div class="flex justify-around items-center h-20 px-4 pb-safe max-w-lg mx-auto">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-white/5 transition-all active:scale-90 duration-150 group" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="grid_view">grid_view</span>
+<span class="font-label-md text-[10px] mt-1">Hub</span>
+</a>
+<!-- Active Navigation -->
+<a class="flex flex-col items-center justify-center text-primary font-bold bg-primary/10 rounded-xl px-4 py-2 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="category" style="font-variation-settings: 'FILL' 1;">category</span>
+<span class="font-label-md text-[10px] mt-1">Categories</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-white/5 transition-all active:scale-90 duration-150 group" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-label-md text-[10px] mt-1">Dashboard</span>
+</a>
+</div>
+</nav>
+<!-- Visual Polish: Floating Particles (Simulated via Gradients) -->
+<div class="fixed top-1/4 -left-20 w-64 h-64 bg-primary/5 blur-[120px] pointer-events-none rounded-full"></div>
+<div class="fixed bottom-1/4 -right-20 w-96 h-96 bg-secondary/5 blur-[120px] pointer-events-none rounded-full"></div>
+</body></html>

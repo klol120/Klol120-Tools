@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Equinox | YouTube Downloader</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#33394c",
+                        "on-tertiary": "#233148",
+                        "tertiary-fixed-dim": "#b9c7e4",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#23293c",
+                        "secondary-container": "#0050ee",
+                        "inverse-surface": "#dce1fb",
+                        "primary": "#c3f5ff",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#0c1324",
+                        "error-container": "#93000a",
+                        "tertiary": "#e6edff",
+                        "on-tertiary-container": "#4c5973",
+                        "on-secondary-container": "#d4dbff",
+                        "inverse-primary": "#006875",
+                        "background": "#0c1324",
+                        "surface-container": "#191f31",
+                        "on-primary": "#00363d",
+                        "on-tertiary-fixed": "#0d1c32",
+                        "primary-fixed-dim": "#00daf3",
+                        "surface-variant": "#2e3447",
+                        "surface": "#0c1324",
+                        "outline-variant": "#3b494c",
+                        "secondary": "#b6c4ff",
+                        "on-primary-container": "#00626e",
+                        "inverse-on-surface": "#2a3043",
+                        "on-tertiary-fixed-variant": "#39475f",
+                        "primary-container": "#00e5ff",
+                        "on-surface": "#dce1fb",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#001550",
+                        "secondary-fixed-dim": "#b6c4ff",
+                        "surface-container-highest": "#2e3447",
+                        "surface-container-low": "#151b2d",
+                        "on-background": "#dce1fb",
+                        "on-primary-fixed": "#001f24",
+                        "on-secondary": "#002780",
+                        "outline": "#849396",
+                        "surface-tint": "#00daf3",
+                        "on-primary-fixed-variant": "#004f58",
+                        "on-secondary-fixed-variant": "#003ab3",
+                        "on-surface-variant": "#bac9cc",
+                        "primary-fixed": "#9cf0ff",
+                        "secondary-fixed": "#dce1ff",
+                        "tertiary-container": "#c3d1ef",
+                        "tertiary-fixed": "#d6e3ff",
+                        "surface-container-lowest": "#070d1f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(10, 25, 47, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-panel:hover {
+            border-color: rgba(195, 245, 255, 0.3);
+            box-shadow: 0 0 40px rgba(0, 218, 243, 0.05);
+        }
+        .bg-radial-glow {
+            background: radial-gradient(circle at 50% 50%, #00626e 0%, #0c1324 70%);
+        }
+        .light-streak {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, rgba(0, 218, 243, 0.2), transparent);
+            height: 1px;
+            width: 100%;
+            transform: rotate(-35deg);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-primary/5">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<span class="font-headline-md text-headline-md font-bold tracking-tight text-primary">Equinox</span>
+<div class="hidden md:flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">All Tools</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Recently Used</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Favorites</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container-low px-4 py-2 rounded-full border border-white/5">
+<span class="material-symbols-outlined text-primary mr-2" style="font-size: 20px;">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-md font-label-md w-48 text-on-surface" placeholder="Search tools..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-primary md:hidden">menu</button>
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-white overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="A professional high-fidelity avatar of a power user with a minimalist tech aesthetic. The portrait is framed in a clean circular crop, featuring soft lighting and a deep navy blue background that matches the Equinox design system palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2684IwNpPa2B0uqgKtAxjqym_hnu5fq28cnYEGF2hqrV6dQFQtXADlZ8ljwvfMzlwDMHgd3ZHjdgFt76k9p-dB8_xGO4s4yaa0DhSbE9xkni_GI22H2PXA4NevyyJ4vdgPV6ltaBYX8GsINq4ZCfKt_IMhZwenJk3G6Z2Lq-us8IskdlTmxpZ3b_qxa-rVcKKmj02l-zoL_PePW7CdOLX-T1k9EWZ_Ax_IkUk-7ALKZ7ZpHFWrT7idqG5OI4Kuzob8e1V2CIK4ZyX"/>
+</div>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-[1000px] mx-auto relative">
+<!-- Background Accents -->
+<div class="fixed inset-0 -z-10 bg-radial-glow opacity-30 pointer-events-none"></div>
+<div class="light-streak top-[20%] -left-[20%] opacity-20"></div>
+<div class="light-streak top-[50%] -right-[10%] opacity-10"></div>
+<!-- Breadcrumb -->
+<div class="flex items-center gap-2 mb-8 text-on-surface-variant/60 font-label-md text-label-md">
+<span>Tools</span>
+<span class="material-symbols-outlined" style="font-size: 16px;">chevron_right</span>
+<span class="text-primary/80">YouTube Downloader</span>
+</div>
+<!-- Tool Header -->
+<div class="mb-12">
+<h1 class="font-display-lg text-display-lg mb-4 text-primary leading-tight">YouTube Downloader</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Experience precision media extraction. Convert and download high-quality assets from any YouTube source with our optimized processing engine.
+            </p>
+</div>
+<!-- Main Tool Card -->
+<div class="glass-panel p-8 md:p-12 rounded-3xl shadow-2xl">
+<div class="grid grid-cols-1 gap-12">
+<!-- Input Section -->
+<div class="space-y-6">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">link</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Video Source URL</h2>
+</div>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest/50 border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all py-6 text-headline-sm font-headline-sm text-on-surface placeholder:text-outline/40" placeholder="https://www.youtube.com/watch?v=..." type="text"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2">
+<span class="text-on-surface-variant/40 font-label-md text-label-md">URL</span>
+</div>
+</div>
+</div>
+<!-- Controls Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Format Selection -->
+<div class="space-y-4">
+<label class="font-label-md text-label-md text-on-surface-variant/80 block uppercase tracking-widest">Output Format</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low/80 border border-white/10 rounded-xl px-6 py-4 appearance-none focus:ring-primary focus:border-primary text-on-surface font-body-md cursor-pointer">
+<option>Video (MP4)</option>
+<option>Audio (MP3)</option>
+<option>Lossless (WAV)</option>
+<option>High Performance (WebM)</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary">expand_more</span>
+</div>
+</div>
+<!-- Quality Selection -->
+<div class="space-y-4">
+<label class="font-label-md text-label-md text-on-surface-variant/80 block uppercase tracking-widest">Resolution / Quality</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low/80 border border-white/10 rounded-xl px-6 py-4 appearance-none focus:ring-primary focus:border-primary text-on-surface font-body-md cursor-pointer">
+<option>Ultra HD (4K)</option>
+<option>Full HD (1080p)</option>
+<option>Standard HD (720p)</option>
+<option>Extreme Audio (320kbps)</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-8">
+<button class="w-full bg-gradient-to-r from-primary-container to-secondary-container hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 py-6 rounded-2xl flex items-center justify-center gap-4 text-on-primary font-headline-sm text-headline-sm shadow-[0_0_30px_rgba(0,218,243,0.2)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">download</span>
+<span>Initialize Download</span>
+</button>
+<p class="text-center mt-6 text-on-surface-variant/40 font-label-md text-label-md">
+                        By using this service you agree to our Terms of Performance.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Features Bento Grid -->
+<div class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-panel p-8 rounded-2xl flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-4xl">bolt</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Turbo Processing</h3>
+<p class="text-on-surface-variant">Cloud-native engine ensures sub-second metadata fetching and extraction.</p>
+</div>
+<div class="glass-panel p-8 rounded-2xl flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-4xl">high_quality</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Lossless Quality</h3>
+<p class="text-on-surface-variant">Preserve every pixel and bit with our bit-exact extraction protocol.</p>
+</div>
+<div class="glass-panel p-8 rounded-2xl flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-4xl">security</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Secure Sandbox</h3>
+<p class="text-on-surface-variant">Downloads are scanned and isolated to ensure your device's safety.</p>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation for Mobile -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container/90 backdrop-blur-2xl border-t border-white/5 rounded-t-xl h-20 flex justify-around items-center px-4 pb-safe shadow-[0_-8px_30px_rgb(0,0,0,0.12)]">
+<div class="flex flex-col items-center justify-center text-primary font-bold bg-primary/10 rounded-xl px-4 py-1">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-md text-label-md">Hub</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant/70">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-md text-label-md">Categories</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant/70">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</div>
+</nav>
+<footer class="mt-auto py-12 border-t border-white/5 text-center text-on-surface-variant/40 font-label-md text-label-md">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<p>© 2024 Equinox Digital Precision. Powered by High-Performance Utility Engines.</p>
+</div>
+</footer>
+</body></html>

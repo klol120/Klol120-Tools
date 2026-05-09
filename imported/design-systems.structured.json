@@ -1,0 +1,140 @@
+{
+    "designSystems":  [
+                          {
+                              "designSystem":  {
+                                                   "displayName":  "Cyanide Glass",
+                                                   "styleGuidelines":  "## Brand \u0026 Style\n\nThe design system is engineered for a premium, high-performance utility platform. It evokes a sense of \"digital precision\" through a heavy emphasis on **Glassmorphism** and high-contrast luminosity. The aesthetic is sophisticated and technical, targeting power users who value speed and aesthetic excellence. \n\nThe visual narrative is built on the contrast between \"infinite space\" (deep navy backgrounds) and \"focused light\" (vibrant electric accents). Surfaces feel like physical glass panes floating in a dark environment, utilizing background blurs and thin, glowing borders to create depth without visual clutter. 3D-inspired iconography adds a tactile, high-fidelity layer to the otherwise minimalist functional elements.\n\n## Layout \u0026 Spacing\n\nThe layout follows a **Fixed Grid** approach for the main content area to maintain a premium, editorial feel, while the navigation and header elements scale to the screen width.\n\n- **Desktop:** 12-column grid with 24px gutters. Content is centered with a max-width of 1280px.\n- **Tablet:** 8-column grid with 20px gutters.\n- **Mobile:** 4-column grid with 16px gutters and 20px side margins.\n\nSpacing is based on an 8px base unit. Component internal padding is generous to maintain the \"light and airy\" feel of the glassmorphism style, even within a dark theme.\n\n## Elevation \u0026 Depth\n\nDepth is achieved through **Glassmorphism** and **Tonal Layering** rather than traditional drop shadows.\n\n1.  **Base Layer:** The deepest navy background with a subtle radial gradient.\n2.  **Surface Layer:** Tool cards and containers use a background blur (12px - 20px) and a semi-transparent fill (`rgba(10, 25, 47, 0.7)`).\n3.  **Accent Layer:** Active elements and hover states utilize a subtle inner glow and a 1px border with a gradient stroke (from white at 20% opacity to white at 5% opacity).\n4.  **Interactive Focus:** Elements \"lift\" on hover through a combination of increased blur and a faint outer glow using the primary cyan color at 10% opacity.\n\n## Components\n\n### Tool Cards\nTool cards feature a glass background and a 1px border. On hover, the border color transitions to the primary cyan, and the 3D icon scales up by 5%. The \"Open Tool\" action button should appear as a high-contrast ghost button that fills on hover.\n\n### Search-Centric Navigation\nThe primary navigation is a prominent, center-aligned search bar in the header. It utilizes a deep-field blur and a primary-colored cursor. Results should appear in a glass-morphed dropdown with subtle dividers.\n\n### Category Pills\nSmall, rounded-pill filters. Inactive state: ghost border with white text at 60% opacity. Active state: gradient fill (Cyan to Blue) with pure black text for maximum legibility.\n\n### Buttons\n- **Primary:** Full gradient fill (Cyan to Blue) with bold navy text.\n- **Secondary:** Semi-transparent glass fill with a 1px cyan border.\n- **Ghost:** No fill, white text, 1px low-opacity border.\n\n### Inputs\nFields should have a dark, semi-transparent background (`rgba(0,0,0,0.3)`) and a bottom-border-only focus state in primary Cyan to maintain a minimalist aesthetic.",
+                                                   "theme":  {
+                                                                 "bodyFont":  "INTER",
+                                                                 "bodyFontFamily":  "Inter",
+                                                                 "colorMode":  "DARK",
+                                                                 "colorVariant":  "FIDELITY",
+                                                                 "customColor":  "#00e5ff",
+                                                                 "designMd":  "---\nname: Cyanide Glass\ncolors:\n  surface: \u0027#0c1324\u0027\n  surface-dim: \u0027#0c1324\u0027\n  surface-bright: \u0027#33394c\u0027\n  surface-container-lowest: \u0027#070d1f\u0027\n  surface-container-low: \u0027#151b2d\u0027\n  surface-container: \u0027#191f31\u0027\n  surface-container-high: \u0027#23293c\u0027\n  surface-container-highest: \u0027#2e3447\u0027\n  on-surface: \u0027#dce1fb\u0027\n  on-surface-variant: \u0027#bac9cc\u0027\n  inverse-surface: \u0027#dce1fb\u0027\n  inverse-on-surface: \u0027#2a3043\u0027\n  outline: \u0027#849396\u0027\n  outline-variant: \u0027#3b494c\u0027\n  surface-tint: \u0027#00daf3\u0027\n  primary: \u0027#c3f5ff\u0027\n  on-primary: \u0027#00363d\u0027\n  primary-container: \u0027#00e5ff\u0027\n  on-primary-container: \u0027#00626e\u0027\n  inverse-primary: \u0027#006875\u0027\n  secondary: \u0027#b6c4ff\u0027\n  on-secondary: \u0027#002780\u0027\n  secondary-container: \u0027#0050ee\u0027\n  on-secondary-container: \u0027#d4dbff\u0027\n  tertiary: \u0027#e6edff\u0027\n  on-tertiary: \u0027#233148\u0027\n  tertiary-container: \u0027#c3d1ef\u0027\n  on-tertiary-container: \u0027#4c5973\u0027\n  error: \u0027#ffb4ab\u0027\n  on-error: \u0027#690005\u0027\n  error-container: \u0027#93000a\u0027\n  on-error-container: \u0027#ffdad6\u0027\n  primary-fixed: \u0027#9cf0ff\u0027\n  primary-fixed-dim: \u0027#00daf3\u0027\n  on-primary-fixed: \u0027#001f24\u0027\n  on-primary-fixed-variant: \u0027#004f58\u0027\n  secondary-fixed: \u0027#dce1ff\u0027\n  secondary-fixed-dim: \u0027#b6c4ff\u0027\n  on-secondary-fixed: \u0027#001550\u0027\n  on-secondary-fixed-variant: \u0027#003ab3\u0027\n  tertiary-fixed: \u0027#d6e3ff\u0027\n  tertiary-fixed-dim: \u0027#b9c7e4\u0027\n  on-tertiary-fixed: \u0027#0d1c32\u0027\n  on-tertiary-fixed-variant: \u0027#39475f\u0027\n  background: \u0027#0c1324\u0027\n  on-background: \u0027#dce1fb\u0027\n  surface-variant: \u0027#2e3447\u0027\ntypography:\n  display-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 64px\n    fontWeight: \u0027700\u0027\n    lineHeight: \u00271.1\u0027\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 40px\n    fontWeight: \u0027700\u0027\n    lineHeight: \u00271.2\u0027\n    letterSpacing: -0.01em\n  headline-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 32px\n    fontWeight: \u0027600\u0027\n    lineHeight: \u00271.3\u0027\n  headline-sm:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 24px\n    fontWeight: \u0027600\u0027\n    lineHeight: \u00271.4\u0027\n  body-lg:\n    fontFamily: Inter\n    fontSize: 18px\n    fontWeight: \u0027400\u0027\n    lineHeight: \u00271.6\u0027\n  body-md:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: \u0027400\u0027\n    lineHeight: \u00271.6\u0027\n  label-md:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: \u0027500\u0027\n    lineHeight: \u00271.2\u0027\n    letterSpacing: 0.05em\n  headline-lg-mobile:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 32px\n    fontWeight: \u0027700\u0027\n    lineHeight: \u00271.2\u0027\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  unit: 8px\n  container-max: 1280px\n  gutter: 24px\n  margin-desktop: 64px\n  margin-mobile: 20px\n---\n\n## Brand \u0026 Style\n\nThe design system is engineered for a premium, high-performance utility platform. It evokes a sense of \"digital precision\" through a heavy emphasis on **Glassmorphism** and high-contrast luminosity. The aesthetic is sophisticated and technical, targeting power users who value speed and aesthetic excellence. \n\nThe visual narrative is built on the contrast between \"infinite space\" (deep navy backgrounds) and \"focused light\" (vibrant electric accents). Surfaces feel like physical glass panes floating in a dark environment, utilizing background blurs and thin, glowing borders to create depth without visual clutter. 3D-inspired iconography adds a tactile, high-fidelity layer to the otherwise minimalist functional elements.\n\n## Colors\n\nThe palette is anchored in a deep, near-black navy (`#020617`) to maximize the luminescence of the accent colors. \n\n- **Primary:** Electric Cyan (`#00E5FF`) is used for primary calls-to-action, active states, and focus indicators.\n- **Secondary:** Cobalt Blue (`#2962FF`) provides depth in gradients and secondary interactive elements.\n- **Surface:** A semi-transparent navy (`#0A192F` at various opacities) is used for glass cards to maintain legibility against the dark background.\n- **Status:** Functional colors (success, warning, error) should be desaturated to avoid clashing with the vibrant primary accents, using high-value tints for visibility.\n\n## Typography\n\nThis design system utilizes **Plus Jakarta Sans** for headings to provide a modern, slightly geometric character that feels premium. **Inter** is utilized for body and UI labels to ensure maximum legibility and a systematic, technical feel.\n\nHeadings should use high contrast (Pure White) and tight letter-spacing for a bold, impactful look. Body text should use a slightly dimmed off-white or light gray to reduce eye strain in the dark environment. Key labels and category titles use all-caps with increased letter-spacing to create a distinctive UI hierarchy.\n\n## Layout \u0026 Spacing\n\nThe layout follows a **Fixed Grid** approach for the main content area to maintain a premium, editorial feel, while the navigation and header elements scale to the screen width.\n\n- **Desktop:** 12-column grid with 24px gutters. Content is centered with a max-width of 1280px.\n- **Tablet:** 8-column grid with 20px gutters.\n- **Mobile:** 4-column grid with 16px gutters and 20px side margins.\n\nSpacing is based on an 8px base unit. Component internal padding is generous to maintain the \"light and airy\" feel of the glassmorphism style, even within a dark theme.\n\n## Elevation \u0026 Depth\n\nDepth is achieved through **Glassmorphism** and **Tonal Layering** rather than traditional drop shadows.\n\n1.  **Base Layer:** The deepest navy background with a subtle radial gradient.\n2.  **Surface Layer:** Tool cards and containers use a background blur (12px - 20px) and a semi-transparent fill (`rgba(10, 25, 47, 0.7)`).\n3.  **Accent Layer:** Active elements and hover states utilize a subtle inner glow and a 1px border with a gradient stroke (from white at 20% opacity to white at 5% opacity).\n4.  **Interactive Focus:** Elements \"lift\" on hover through a combination of increased blur and a faint outer glow using the primary cyan color at 10% opacity.\n\n## Shapes\n\nThe shape language is consistently rounded to soften the technical aesthetic. \n\n- **Cards \u0026 Large Containers:** Use `rounded-xl` (24px) to emphasize the glass pane feel.\n- **Buttons \u0026 Inputs:** Use `rounded-lg` (16px) for a modern, tactile appearance.\n- **Category Pills:** Use the \"Pill\" shape (full radius) to differentiate them from functional action buttons.\n- **Borders:** All glass containers must feature a 1px solid border with a low-opacity white or primary-tinted stroke to define the edges against the dark background.\n\n## Components\n\n### Tool Cards\nTool cards feature a glass background and a 1px border. On hover, the border color transitions to the primary cyan, and the 3D icon scales up by 5%. The \"Open Tool\" action button should appear as a high-contrast ghost button that fills on hover.\n\n### Search-Centric Navigation\nThe primary navigation is a prominent, center-aligned search bar in the header. It utilizes a deep-field blur and a primary-colored cursor. Results should appear in a glass-morphed dropdown with subtle dividers.\n\n### Category Pills\nSmall, rounded-pill filters. Inactive state: ghost border with white text at 60% opacity. Active state: gradient fill (Cyan to Blue) with pure black text for maximum legibility.\n\n### Buttons\n- **Primary:** Full gradient fill (Cyan to Blue) with bold navy text.\n- **Secondary:** Semi-transparent glass fill with a 1px cyan border.\n- **Ghost:** No fill, white text, 1px low-opacity border.\n\n### Inputs\nFields should have a dark, semi-transparent background (`rgba(0,0,0,0.3)`) and a bottom-border-only focus state in primary Cyan to maintain a minimalist aesthetic.",
+                                                                 "font":  "PLUS_JAKARTA_SANS",
+                                                                 "headlineFont":  "PLUS_JAKARTA_SANS",
+                                                                 "headlineFontFamily":  "Plus Jakarta Sans",
+                                                                 "labelFont":  "INTER",
+                                                                 "labelFontFamily":  "Inter",
+                                                                 "namedColors":  {
+                                                                                     "background":  "#0c1324",
+                                                                                     "error":  "#ffb4ab",
+                                                                                     "error_container":  "#93000a",
+                                                                                     "inverse_on_surface":  "#2a3043",
+                                                                                     "inverse_primary":  "#006875",
+                                                                                     "inverse_surface":  "#dce1fb",
+                                                                                     "on_background":  "#dce1fb",
+                                                                                     "on_error":  "#690005",
+                                                                                     "on_error_container":  "#ffdad6",
+                                                                                     "on_primary":  "#00363d",
+                                                                                     "on_primary_container":  "#00626e",
+                                                                                     "on_primary_fixed":  "#001f24",
+                                                                                     "on_primary_fixed_variant":  "#004f58",
+                                                                                     "on_secondary":  "#002780",
+                                                                                     "on_secondary_container":  "#d4dbff",
+                                                                                     "on_secondary_fixed":  "#001550",
+                                                                                     "on_secondary_fixed_variant":  "#003ab3",
+                                                                                     "on_surface":  "#dce1fb",
+                                                                                     "on_surface_variant":  "#bac9cc",
+                                                                                     "on_tertiary":  "#233148",
+                                                                                     "on_tertiary_container":  "#4c5973",
+                                                                                     "on_tertiary_fixed":  "#0d1c32",
+                                                                                     "on_tertiary_fixed_variant":  "#39475f",
+                                                                                     "outline":  "#849396",
+                                                                                     "outline_variant":  "#3b494c",
+                                                                                     "primary":  "#c3f5ff",
+                                                                                     "primary_container":  "#00e5ff",
+                                                                                     "primary_fixed":  "#9cf0ff",
+                                                                                     "primary_fixed_dim":  "#00daf3",
+                                                                                     "secondary":  "#b6c4ff",
+                                                                                     "secondary_container":  "#0050ee",
+                                                                                     "secondary_fixed":  "#dce1ff",
+                                                                                     "secondary_fixed_dim":  "#b6c4ff",
+                                                                                     "surface":  "#0c1324",
+                                                                                     "surface_bright":  "#33394c",
+                                                                                     "surface_container":  "#191f31",
+                                                                                     "surface_container_high":  "#23293c",
+                                                                                     "surface_container_highest":  "#2e3447",
+                                                                                     "surface_container_low":  "#151b2d",
+                                                                                     "surface_container_lowest":  "#070d1f",
+                                                                                     "surface_dim":  "#0c1324",
+                                                                                     "surface_tint":  "#00daf3",
+                                                                                     "surface_variant":  "#2e3447",
+                                                                                     "tertiary":  "#e6edff",
+                                                                                     "tertiary_container":  "#c3d1ef",
+                                                                                     "tertiary_fixed":  "#d6e3ff",
+                                                                                     "tertiary_fixed_dim":  "#b9c7e4"
+                                                                                 },
+                                                                 "overrideNeutralColor":  "#020617",
+                                                                 "overridePrimaryColor":  "#00e5ff",
+                                                                 "overrideSecondaryColor":  "#2962ff",
+                                                                 "overrideTertiaryColor":  "#0a192f",
+                                                                 "roundness":  "ROUND_EIGHT",
+                                                                 "spacing":  {
+                                                                                 "container-max":  "1280px",
+                                                                                 "gutter":  "24px",
+                                                                                 "margin-desktop":  "64px",
+                                                                                 "margin-mobile":  "20px",
+                                                                                 "unit":  "8px"
+                                                                             },
+                                                                 "spacingScale":  2,
+                                                                 "typography":  {
+                                                                                    "body-lg":  {
+                                                                                                    "fontFamily":  "Inter",
+                                                                                                    "fontSize":  "18px",
+                                                                                                    "fontWeight":  "400",
+                                                                                                    "lineHeight":  "1.6"
+                                                                                                },
+                                                                                    "body-md":  {
+                                                                                                    "fontFamily":  "Inter",
+                                                                                                    "fontSize":  "16px",
+                                                                                                    "fontWeight":  "400",
+                                                                                                    "lineHeight":  "1.6"
+                                                                                                },
+                                                                                    "display-lg":  {
+                                                                                                       "fontFamily":  "Plus Jakarta Sans",
+                                                                                                       "fontSize":  "64px",
+                                                                                                       "fontWeight":  "700",
+                                                                                                       "letterSpacing":  "-0.02em",
+                                                                                                       "lineHeight":  "1.1"
+                                                                                                   },
+                                                                                    "headline-lg":  {
+                                                                                                        "fontFamily":  "Plus Jakarta Sans",
+                                                                                                        "fontSize":  "40px",
+                                                                                                        "fontWeight":  "700",
+                                                                                                        "letterSpacing":  "-0.01em",
+                                                                                                        "lineHeight":  "1.2"
+                                                                                                    },
+                                                                                    "headline-lg-mobile":  {
+                                                                                                               "fontFamily":  "Plus Jakarta Sans",
+                                                                                                               "fontSize":  "32px",
+                                                                                                               "fontWeight":  "700",
+                                                                                                               "lineHeight":  "1.2"
+                                                                                                           },
+                                                                                    "headline-md":  {
+                                                                                                        "fontFamily":  "Plus Jakarta Sans",
+                                                                                                        "fontSize":  "32px",
+                                                                                                        "fontWeight":  "600",
+                                                                                                        "lineHeight":  "1.3"
+                                                                                                    },
+                                                                                    "headline-sm":  {
+                                                                                                        "fontFamily":  "Plus Jakarta Sans",
+                                                                                                        "fontSize":  "24px",
+                                                                                                        "fontWeight":  "600",
+                                                                                                        "lineHeight":  "1.4"
+                                                                                                    },
+                                                                                    "label-md":  {
+                                                                                                     "fontFamily":  "Inter",
+                                                                                                     "fontSize":  "14px",
+                                                                                                     "fontWeight":  "500",
+                                                                                                     "letterSpacing":  "0.05em",
+                                                                                                     "lineHeight":  "1.2"
+                                                                                                 }
+                                                                                }
+                                                             }
+                                               },
+                              "name":  "assets/d2abf1dc66d24ffd8ce4430261a53a6e",
+                              "version":  "1"
+                          }
+                      ]
+}

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-bright": "#33394c",
+                "on-tertiary": "#233148",
+                "tertiary-fixed-dim": "#b9c7e4",
+                "on-error-container": "#ffdad6",
+                "surface-container-high": "#23293c",
+                "secondary-container": "#0050ee",
+                "inverse-surface": "#dce1fb",
+                "primary": "#c3f5ff",
+                "error": "#ffb4ab",
+                "surface-dim": "#0c1324",
+                "error-container": "#93000a",
+                "tertiary": "#e6edff",
+                "on-tertiary-container": "#4c5973",
+                "on-secondary-container": "#d4dbff",
+                "inverse-primary": "#006875",
+                "background": "#0c1324",
+                "surface-container": "#191f31",
+                "on-primary": "#00363d",
+                "on-tertiary-fixed": "#0d1c32",
+                "primary-fixed-dim": "#00daf3",
+                "surface-variant": "#2e3447",
+                "surface": "#0c1324",
+                "outline-variant": "#3b494c",
+                "secondary": "#b6c4ff",
+                "on-primary-container": "#00626e",
+                "inverse-on-surface": "#2a3043",
+                "on-tertiary-fixed-variant": "#39475f",
+                "primary-container": "#00e5ff",
+                "on-surface": "#dce1fb",
+                "on-error": "#690005",
+                "on-secondary-fixed": "#001550",
+                "secondary-fixed-dim": "#b6c4ff",
+                "surface-container-highest": "#2e3447",
+                "surface-container-low": "#151b2d",
+                "on-background": "#dce1fb",
+                "on-primary-fixed": "#001f24",
+                "on-secondary": "#002780",
+                "outline": "#849396",
+                "surface-tint": "#00daf3",
+                "on-primary-fixed-variant": "#004f58",
+                "on-secondary-fixed-variant": "#003ab3",
+                "on-surface-variant": "#bac9cc",
+                "primary-fixed": "#9cf0ff",
+                "secondary-fixed": "#dce1ff",
+                "tertiary-container": "#c3d1ef",
+                "tertiary-fixed": "#d6e3ff",
+                "surface-container-lowest": "#070d1f"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "unit": "8px",
+                "container-max": "1280px",
+                "margin-mobile": "20px",
+                "margin-desktop": "64px",
+                "gutter": "24px"
+            },
+            "fontFamily": {
+                "headline-lg-mobile": ["Plus Jakarta Sans"],
+                "display-lg": ["Plus Jakarta Sans"],
+                "body-md": ["Inter"],
+                "headline-sm": ["Plus Jakarta Sans"],
+                "label-md": ["Inter"],
+                "headline-lg": ["Plus Jakarta Sans"],
+                "headline-md": ["Plus Jakarta Sans"],
+                "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(25, 31, 49, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-panel:hover {
+            border-color: rgba(195, 245, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 218, 243, 0.05);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #c3f5ff 0%, #b6c4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-button {
+            background: linear-gradient(135deg, #00e5ff 0%, #0050ee 100%);
+        }
+        .radial-glow {
+            background: radial-gradient(circle at center, rgba(0, 218, 243, 0.05) 0%, transparent 70%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/30 min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-primary/5">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-transform" data-icon="menu">menu</span>
+<h1 class="font-headline-md text-headline-md font-bold tracking-tight text-primary">Equinox</h1>
+</div>
+<!-- Desktop Search Centric Nav -->
+<div class="hidden md:flex items-center flex-1 max-w-xl mx-8">
+<div class="w-full relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant/50" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low/50 border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-xl pl-12 pr-4 py-2 text-body-md transition-all" placeholder="Search tools, history or commands..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md text-primary font-bold transition-colors" href="#">Dashboard</a>
+<a class="font-label-md text-label-md text-on-surface-variant/70 hover:text-primary transition-colors" href="#">Categories</a>
+<a class="font-label-md text-label-md text-on-surface-variant/70 hover:text-primary transition-colors" href="#">Hub</a>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="User Profile" data-alt="A professional close-up portrait of a tech-savvy power user with a confident expression, set against a dark studio background with subtle cyan lighting. The aesthetic is clean and high-fidelity, matching a premium digital dashboard theme. The lighting creates sharp highlights on the subject's face, conveying a sense of expertise and performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClpbK9QlhIazUqihv2Z2_8QGOzsjcp52PU7z5yy1x8K2_PEufkVtcmm7UkZr82K6LP2vUibm-Y2JDa7N9eXqSU6ACgZQ4nRnZXySxu1hJfYVkiO1q6pRGHVVvdf9MnF2_AfK1n7-rLyKfEtVaY1ViAjSV_BO0vNtP-j5eITu0wd8z1Wh6t3pXcBLTvXTrzNerFouIi4fr2C7nG69Wvk7Mz-8aNikjZP5wG6Vtdj8_4GTgrBO7HWcG4S5sHG8ZWR-LcM-LJCF7a0L-X"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto pb-12">
+<!-- Profile Header -->
+<section class="mb-12 relative">
+<div class="absolute inset-0 radial-glow -z-10 scale-150 opacity-50"></div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-2">Welcome back, <span class="gradient-text">Power User</span></h2>
+<div class="flex items-center gap-3">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full font-label-md text-label-md border border-primary/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                            Pro Member
+                        </span>
+<span class="text-on-surface-variant/60 font-label-md text-label-md">v1.2.0 • Premium Access</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="glass-panel px-6 py-2.5 rounded-xl text-on-surface flex items-center gap-2 hover:bg-white/5 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-primary" data-icon="settings">settings</span>
+                        Settings
+                    </button>
+<button class="gradient-button px-6 py-2.5 rounded-xl text-on-primary font-bold flex items-center gap-2 active:scale-95 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                        New Project
+                    </button>
+</div>
+</div>
+</section>
+<!-- Main Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Favorites Grid (6 cols) -->
+<section class="md:col-span-8">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline-sm text-headline-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                        Favorites
+                    </h3>
+<a class="text-primary font-label-md text-label-md hover:underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- Favorite Tool Card 1 -->
+<div class="glass-panel p-6 rounded-2xl group cursor-pointer transition-all duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="analytics">analytics</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 hover:text-primary transition-colors" data-icon="more_vert">more_vert</span>
+</div>
+<h4 class="font-headline-sm text-[20px] mb-2">Neural Engine</h4>
+<p class="text-on-surface-variant text-body-md mb-6 line-clamp-2">High-performance data analysis with automated insight generation.</p>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant/50 font-label-md text-[12px]">Last used 2h ago</span>
+<button class="text-primary font-bold font-label-md flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Launch Tool <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Favorite Tool Card 2 -->
+<div class="glass-panel p-6 rounded-2xl group cursor-pointer transition-all duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 bg-secondary-container/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-3xl text-secondary" data-icon="architecture">architecture</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 hover:text-primary transition-colors" data-icon="more_vert">more_vert</span>
+</div>
+<h4 class="font-headline-sm text-[20px] mb-2">Architect Pro</h4>
+<p class="text-on-surface-variant text-body-md mb-6 line-clamp-2">System design and visual modeling for complex cloud infrastructures.</p>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant/50 font-label-md text-[12px]">Last used 1d ago</span>
+<button class="text-primary font-bold font-label-md flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Launch Tool <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Favorite Tool Card 3 -->
+<div class="glass-panel p-6 rounded-2xl group cursor-pointer transition-all duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 bg-surface-bright/50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-3xl text-on-surface" data-icon="terminal">terminal</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 hover:text-primary transition-colors" data-icon="more_vert">more_vert</span>
+</div>
+<h4 class="font-headline-sm text-[20px] mb-2">Core Console</h4>
+<p class="text-on-surface-variant text-body-md mb-6 line-clamp-2">Command-line interface for deep system integration and automation scripts.</p>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant/50 font-label-md text-[12px]">Last used 4h ago</span>
+<button class="text-primary font-bold font-label-md flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Launch Tool <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Favorite Tool Card 4 -->
+<div class="glass-panel p-6 rounded-2xl group cursor-pointer transition-all duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 bg-tertiary-container/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-3xl text-tertiary" data-icon="cloud_sync">cloud_sync</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 hover:text-primary transition-colors" data-icon="more_vert">more_vert</span>
+</div>
+<h4 class="font-headline-sm text-[20px] mb-2">Stream Sync</h4>
+<p class="text-on-surface-variant text-body-md mb-6 line-clamp-2">Real-time data synchronization across multi-region edge nodes.</p>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant/50 font-label-md text-[12px]">Last used 6h ago</span>
+<button class="text-primary font-bold font-label-md flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Launch Tool <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- History Section (4 cols) -->
+<aside class="md:col-span-4">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline-sm text-headline-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="history">history</span>
+                        History
+                    </h3>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="filter_list">filter_list</button>
+</div>
+<div class="glass-panel rounded-2xl overflow-hidden">
+<div class="divide-y divide-white/5">
+<!-- History Item 1 -->
+<div class="p-4 hover:bg-white/5 transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md font-bold truncate">Q4_Report_Neural.pdf</p>
+<p class="text-[12px] text-on-surface-variant/60">Downloaded • 24MB</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[20px]" data-icon="download">download</span>
+</div>
+</div>
+<!-- History Item 2 -->
+<div class="p-4 hover:bg-white/5 transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-bright/50 flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="archive">archive</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md font-bold truncate">Project_Alpha_Assets.zip</p>
+<p class="text-[12px] text-on-surface-variant/60">Downloaded • 1.2GB</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[20px]" data-icon="download">download</span>
+</div>
+</div>
+<!-- History Item 3 -->
+<div class="p-4 hover:bg-white/5 transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="image">image</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md font-bold truncate">Header_Hero_V2.png</p>
+<p class="text-[12px] text-on-surface-variant/60">Downloaded • 4.5MB</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[20px]" data-icon="download">download</span>
+</div>
+</div>
+<!-- History Item 4 -->
+<div class="p-4 hover:bg-white/5 transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-error-container/20 flex items-center justify-center text-error group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md font-bold truncate">Deployment_Script.sh</p>
+<p class="text-[12px] text-on-surface-variant/60">Downloaded • 12KB</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[20px]" data-icon="download">download</span>
+</div>
+</div>
+<!-- History Item 5 -->
+<div class="p-4 hover:bg-white/5 transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-bright/50 flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md font-bold truncate">Schema_Backup_Oct.sql</p>
+<p class="text-[12px] text-on-surface-variant/60">Downloaded • 158MB</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[20px]" data-icon="download">download</span>
+</div>
+</div>
+</div>
+<button class="w-full py-4 text-center font-label-md text-label-md text-on-surface-variant/70 hover:text-primary transition-colors bg-white/5 hover:bg-white/10">
+                        View Full History
+                    </button>
+</div>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container/90 backdrop-blur-2xl rounded-t-xl border-t border-white/5 shadow-[0_-8px_30px_rgb(0,0,0,0.12)]">
+<div class="flex justify-around items-center h-20 px-4 pb-safe">
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-white/5 active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-md text-[10px] mt-1">Hub</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-white/5 active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-md text-[10px] mt-1">Categories</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary font-bold bg-primary/10 rounded-xl px-4 py-1 active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-[10px] mt-1">Dashboard</span>
+</button>
+</div>
+</nav>
+<!-- Contextual FAB (Dashboard relevant action) -->
+<button class="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-14 h-14 gradient-button rounded-full flex items-center justify-center text-on-primary shadow-2xl active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="handyman">handyman</span>
+</button>
+</body></html>
