@@ -1,8 +1,18 @@
 const iconPaths = {
-  video: (
+  dashboard: (
     <>
-      <path d="M5 7.5A2.5 2.5 0 0 1 7.5 5h6A2.5 2.5 0 0 1 16 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-6A2.5 2.5 0 0 1 5 16.5v-9Z" />
-      <path d="m16 10 3.8-2.2a.8.8 0 0 1 1.2.7v7a.8.8 0 0 1-1.2.7L16 14" />
+      <path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h5v7h-7v-5.5Z" />
+      <path d="M13.5 4h5A1.5 1.5 0 0 1 20 5.5v3h-6.5V4Z" />
+      <path d="M13.5 11H20v7.5a1.5 1.5 0 0 1-1.5 1.5h-5v-9Z" />
+      <path d="M4 13.5h7V20H5.5A1.5 1.5 0 0 1 4 18.5v-5Z" />
+    </>
+  ),
+  categories: (
+    <>
+      <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h3A2.5 2.5 0 0 1 12 6.5v3A2.5 2.5 0 0 1 9.5 12h-3A2.5 2.5 0 0 1 4 9.5v-3Z" />
+      <path d="M14 6.5A2.5 2.5 0 0 1 16.5 4h1A2.5 2.5 0 0 1 20 6.5v1A2.5 2.5 0 0 1 17.5 10h-1A2.5 2.5 0 0 1 14 7.5v-1Z" />
+      <path d="M14 14.5A2.5 2.5 0 0 1 16.5 12h1A2.5 2.5 0 0 1 20 14.5v3A2.5 2.5 0 0 1 17.5 20h-1A2.5 2.5 0 0 1 14 17.5v-3Z" />
+      <path d="M4 16.5A2.5 2.5 0 0 1 6.5 14h3a2.5 2.5 0 0 1 0 5h-3A2.5 2.5 0 0 1 4 16.5Z" />
     </>
   ),
   file: (
@@ -13,29 +23,13 @@ const iconPaths = {
       <path d="M9.5 16h4.5" />
     </>
   ),
-  image: (
+  video: (
     <>
-      <path d="M5 6.5A2.5 2.5 0 0 1 7.5 4h9A2.5 2.5 0 0 1 19 6.5v11A2.5 2.5 0 0 1 16.5 20h-9A2.5 2.5 0 0 1 5 17.5v-11Z" />
-      <path d="m7 16 3.2-3.2 2.2 2.2 2.7-3.3L19 16" />
-      <path d="M9 8.8h.1" />
+      <path d="M5 7.5A2.5 2.5 0 0 1 7.5 5h6A2.5 2.5 0 0 1 16 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-6A2.5 2.5 0 0 1 5 16.5v-9Z" />
+      <path d="m16 10 3.8-2.2a.8.8 0 0 1 1.2.7v7a.8.8 0 0 1-1.2.7L16 14" />
     </>
   ),
-  text: (
-    <>
-      <path d="M5 6h14" />
-      <path d="M8 6v12" />
-      <path d="M16 6v12" />
-      <path d="M6.8 18h4.4" />
-      <path d="M12.8 18h4.4" />
-    </>
-  ),
-  link: (
-    <>
-      <path d="M10.5 13.5a3.5 3.5 0 0 0 5 0l2-2a3.5 3.5 0 0 0-5-5l-1.1 1.1" />
-      <path d="M13.5 10.5a3.5 3.5 0 0 0-5 0l-2 2a3.5 3.5 0 0 0 5 5l1.1-1.1" />
-    </>
-  ),
-  utility: (
+  hub: (
     <>
       <path d="M12 3.5v3" />
       <path d="M12 17.5v3" />
@@ -66,54 +60,78 @@ const iconPaths = {
   ),
 }
 
+const navItems = [
+  { label: 'Hub', href: '#hub' },
+  { label: 'Designs', href: '#designs' },
+  { label: 'Roadmap', href: '#roadmap' },
+]
+
 const categories = ['All', 'Media', 'PDF', 'Images', 'Text', 'Utilities']
 
-const tools = [
+const importedDesigns = [
   {
-    name: 'Video Downloader',
-    category: 'Media',
-    description: 'A ready slot for YouTube and social video download flows.',
-    icon: 'video',
-    accent: 'bg-rose-50 text-rose-700 ring-rose-100',
+    name: 'Equinox Hub',
+    category: 'Hub',
+    description: 'The high-performance utility landing surface from the Stitch import.',
+    icon: 'hub',
+    metric: '5 screens',
+  },
+  {
+    name: 'Browse Categories',
+    category: 'Directory',
+    description: 'A category browser for scanning tool groups and choosing the right workflow.',
+    icon: 'categories',
+    metric: '940 px',
   },
   {
     name: 'PDF Converter',
     category: 'PDF',
-    description: 'Convert, merge, split, compress, and organize documents.',
+    description: 'A document conversion workspace for merge, split, compress, and export flows.',
     icon: 'file',
-    accent: 'bg-amber-50 text-amber-700 ring-amber-100',
+    metric: '5,384 px',
   },
   {
-    name: 'Image Tools',
-    category: 'Images',
-    description: 'Resize, compress, convert, crop, and prepare image files.',
-    icon: 'image',
-    accent: 'bg-emerald-50 text-emerald-700 ring-emerald-100',
+    name: 'YouTube Downloader',
+    category: 'Media',
+    description: 'A video utility screen with URL entry, format selection, and download states.',
+    icon: 'video',
+    metric: '4,548 px',
   },
   {
-    name: 'Text Formatter',
-    category: 'Text',
-    description: 'Clean, transform, count, and format text quickly.',
-    icon: 'text',
-    accent: 'bg-sky-50 text-sky-700 ring-sky-100',
+    name: 'My Dashboard',
+    category: 'Dashboard',
+    description: 'A personal command center for recent tools, downloads, and quick actions.',
+    icon: 'dashboard',
+    metric: '4,368 px',
   },
   {
-    name: 'URL Utilities',
-    category: 'Utilities',
-    description: 'Shorten, encode, decode, inspect, and normalize links.',
-    icon: 'link',
-    accent: 'bg-violet-50 text-violet-700 ring-violet-100',
-  },
-  {
-    name: 'Quick Utilities',
-    category: 'Utilities',
-    description: 'Small helpers for everyday conversions and cleanup tasks.',
-    icon: 'utility',
-    accent: 'bg-slate-100 text-slate-700 ring-slate-200',
+    name: 'HOME.jpeg',
+    category: 'Reference',
+    description: 'The hidden image-only reference screen preserved from the Stitch canvas.',
+    icon: 'layers',
+    metric: 'source',
   },
 ]
 
-function Icon({ name, className = 'h-5 w-5' }) {
+const featureItems = [
+  {
+    title: 'Consistent interface states',
+    body: 'Buttons, links, cards, and fields now share clear focus and hover behavior.',
+    icon: 'shield',
+  },
+  {
+    title: 'Responsive utility layout',
+    body: 'The layout holds at mobile, tablet, and desktop widths with stable spacing.',
+    icon: 'layers',
+  },
+  {
+    title: 'Import-aware roadmap',
+    body: 'Every Stitch screen is represented as a working website surface instead of sitting idle.',
+    icon: 'bolt',
+  },
+]
+
+function Icon({ name, className = 'icon-md' }) {
   return (
     <svg
       className={className}
@@ -132,38 +150,29 @@ function Icon({ name, className = 'h-5 w-5' }) {
 
 function Header() {
   return (
-    <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/88 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#" className="flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-lg bg-slate-950 text-white">
-            <Icon name="layers" className="h-5 w-5" />
+    <header className="site-header">
+      <div className="site-shell header-inner">
+        <a href="#hub" className="brand-link" aria-label="Klol120 Tools home">
+          <span className="brand-mark">
+            <Icon name="layers" />
           </span>
           <span>
-            <span className="block text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
-              Klol120
-            </span>
-            <span className="block text-lg font-bold text-slate-950">Tools</span>
+            <span className="eyebrow">Klol120</span>
+            <span className="brand-name">Tools</span>
           </span>
         </a>
 
-        <nav className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
-          <a className="transition hover:text-slate-950" href="#tools">
-            Tools
-          </a>
-          <a className="transition hover:text-slate-950" href="#categories">
-            Categories
-          </a>
-          <a className="transition hover:text-slate-950" href="#roadmap">
-            Roadmap
-          </a>
+        <nav className="desktop-nav" aria-label="Primary navigation">
+          {navItems.map((item) => (
+            <a key={item.href} href={item.href} className="nav-link">
+              {item.label}
+            </a>
+          ))}
         </nav>
 
-        <a
-          href="#tools"
-          className="inline-flex h-10 items-center gap-2 rounded-lg bg-slate-950 px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
-        >
+        <a href="#designs" className="button button-primary">
           Browse
-          <Icon name="arrow" className="h-4 w-4" />
+          <Icon name="arrow" className="icon-sm" />
         </a>
       </div>
     </header>
@@ -172,57 +181,46 @@ function Header() {
 
 function Hero() {
   return (
-    <section className="border-b border-slate-200/80">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-20">
-        <div className="flex flex-col justify-center">
-          <p className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-sm font-semibold text-teal-800">
-            <Icon name="bolt" className="h-4 w-4" />
-            One home for fast browser tools
+    <section id="hub" className="hero-section">
+      <div className="site-shell hero-grid">
+        <div className="hero-copy">
+          <p className="pill">
+            <Icon name="bolt" className="icon-sm" />
+            Cyanide Glass import applied
           </p>
-          <h1 className="max-w-3xl text-4xl font-black leading-tight text-slate-950 sm:text-5xl lg:text-6xl">
-            A clean base for every online tool you want to build.
-          </h1>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-            Start with a polished directory, reusable cards, categories, and a
-            layout ready for downloaders, converters, editors, and utility pages.
+          <h1 className="display-title">Universal Utility Hub</h1>
+          <p className="body-large">
+            A polished utility platform shell built from the Stitch project inventory:
+            dashboard, categories, PDF conversion, video download, and the hidden
+            reference screen are all represented in one responsive website.
           </p>
 
-          <div className="mt-8 max-w-2xl rounded-xl border border-slate-200 bg-white p-2 shadow-sm">
-            <label className="flex min-h-12 items-center gap-3 px-3 text-slate-500">
-              <Icon name="search" className="h-5 w-5 shrink-0" />
-              <input
-                type="search"
-                placeholder="Search tools, converters, downloaders..."
-                className="h-12 w-full bg-transparent text-base text-slate-950 outline-none placeholder:text-slate-400"
-              />
-            </label>
-          </div>
+          <label className="search-field">
+            <Icon name="search" />
+            <span className="sr-only">Search tools</span>
+            <input
+              type="search"
+              placeholder="Search tools, converters, downloaders..."
+              aria-label="Search tools, converters, downloaders"
+            />
+          </label>
         </div>
 
-        <div className="relative min-h-[430px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-200/70">
-          <div className="absolute inset-x-0 top-0 h-16 border-b border-slate-200 bg-slate-50/80">
-            <div className="flex h-full items-center gap-2 px-5">
-              <span className="h-3 w-3 rounded-full bg-rose-400" />
-              <span className="h-3 w-3 rounded-full bg-amber-400" />
-              <span className="h-3 w-3 rounded-full bg-emerald-400" />
-            </div>
+        <div className="hero-panel" aria-label="Imported Stitch screens summary">
+          <div className="window-bar" aria-hidden="true">
+            <span />
+            <span />
+            <span />
           </div>
-          <div className="grid h-full gap-4 p-5 pt-24 sm:grid-cols-2">
-            {tools.slice(0, 4).map((tool) => (
-              <div
-                key={tool.name}
-                className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
-              >
-                <div
-                  className={`mb-4 grid h-11 w-11 place-items-center rounded-lg ring-1 ${tool.accent}`}
-                >
-                  <Icon name={tool.icon} />
+          <div className="panel-grid">
+            {importedDesigns.slice(0, 4).map((design) => (
+              <article key={design.name} className="mini-card">
+                <div className="card-icon">
+                  <Icon name={design.icon} />
                 </div>
-                <h3 className="font-bold text-slate-950">{tool.name}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-500">
-                  {tool.description}
-                </p>
-              </div>
+                <h3 className="card-title-sm">{design.name}</h3>
+                <p>{design.description}</p>
+              </article>
             ))}
           </div>
         </div>
@@ -233,19 +231,13 @@ function Hero() {
 
 function CategoryTabs() {
   return (
-    <div
-      id="categories"
-      className="flex gap-2 overflow-x-auto pb-2 [scrollbar-width:none]"
-    >
+    <div id="categories" className="category-tabs" aria-label="Tool categories">
       {categories.map((category, index) => (
         <button
           key={category}
           type="button"
-          className={`h-10 shrink-0 rounded-lg border px-4 text-sm font-semibold transition ${
-            index === 0
-              ? 'border-slate-950 bg-slate-950 text-white'
-              : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:text-slate-950'
-          }`}
+          className={index === 0 ? 'category-pill active' : 'category-pill'}
+          aria-pressed={index === 0}
         >
           {category}
         </button>
@@ -254,63 +246,38 @@ function CategoryTabs() {
   )
 }
 
-function ToolCard({ tool }) {
+function DesignCard({ design }) {
   return (
-    <article className="group flex min-h-64 flex-col rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-200/70">
-      <div className="flex items-start justify-between gap-4">
-        <div className={`grid h-12 w-12 place-items-center rounded-lg ring-1 ${tool.accent}`}>
-          <Icon name={tool.icon} />
+    <article className="design-card">
+      <div className="card-topline">
+        <div className="card-icon">
+          <Icon name={design.icon} />
         </div>
-        <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-slate-500">
-          Soon
-        </span>
+        <span className="metric">{design.metric}</span>
       </div>
-      <div className="mt-6 flex-1">
-        <p className="text-sm font-semibold text-slate-500">{tool.category}</p>
-        <h3 className="mt-2 text-xl font-bold text-slate-950">{tool.name}</h3>
-        <p className="mt-3 text-sm leading-6 text-slate-600">{tool.description}</p>
-      </div>
-      <button
-        type="button"
-        className="mt-6 inline-flex h-11 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 text-sm font-bold text-slate-700 transition group-hover:border-slate-950 group-hover:text-slate-950"
-      >
+      <p className="label">{design.category}</p>
+      <h3 className="card-title">{design.name}</h3>
+      <p className="card-copy">{design.description}</p>
+      <button type="button" className="button button-secondary">
         Open placeholder
-        <Icon name="arrow" className="h-4 w-4" />
+        <Icon name="arrow" className="icon-sm" />
       </button>
     </article>
   )
 }
 
 function FeatureRow() {
-  const items = [
-    {
-      title: 'Fast by default',
-      body: 'Built as a lightweight frontend base that is easy to expand.',
-      icon: 'bolt',
-    },
-    {
-      title: 'Reusable structure',
-      body: 'Cards, categories, buttons, and page bands are ready to reuse.',
-      icon: 'layers',
-    },
-    {
-      title: 'User-focused',
-      body: 'Designed for repeat utility use with clear scanning and actions.',
-      icon: 'shield',
-    },
-  ]
-
   return (
-    <section id="roadmap" className="border-y border-slate-200 bg-white">
-      <div className="mx-auto grid max-w-7xl gap-0 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
-        {items.map((item) => (
-          <div key={item.title} className="border-slate-200 py-8 lg:border-r lg:px-8 last:lg:border-r-0">
-            <div className="mb-4 grid h-10 w-10 place-items-center rounded-lg bg-slate-950 text-white">
-              <Icon name={item.icon} className="h-5 w-5" />
+    <section id="roadmap" className="feature-band">
+      <div className="site-shell feature-grid">
+        {featureItems.map((item) => (
+          <article key={item.title} className="feature-item">
+            <div className="feature-icon">
+              <Icon name={item.icon} />
             </div>
-            <h3 className="text-lg font-bold text-slate-950">{item.title}</h3>
-            <p className="mt-2 max-w-sm text-sm leading-6 text-slate-600">{item.body}</p>
-          </div>
+            <h3 className="card-title-sm">{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
         ))}
       </div>
     </section>
@@ -319,48 +286,43 @@ function FeatureRow() {
 
 function App() {
   return (
-    <main>
+    <>
       <Header />
-      <Hero />
-      <section id="tools" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mb-8 flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-teal-700">
-              Tool library
-            </p>
-            <h2 className="mt-3 text-3xl font-black text-slate-950 sm:text-4xl">
-              Ready for the tools we build next.
-            </h2>
-            <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
-              These are placeholder modules for now. Each card can become a route,
-              upload flow, form, progress state, or result view.
-            </p>
+      <main>
+        <Hero />
+        <section id="designs" className="site-shell section-block">
+          <div className="section-heading">
+            <div>
+              <p className="label">Tool library</p>
+              <h2 className="section-title">Imported designs, ready to wire.</h2>
+              <p className="section-copy">
+                The working site now mirrors the Stitch inventory and keeps spacing,
+                labels, headings, and interaction states aligned across equivalent
+                sections.
+              </p>
+            </div>
+            <CategoryTabs />
           </div>
-          <CategoryTabs />
-        </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {tools.map((tool) => (
-            <ToolCard key={tool.name} tool={tool} />
+          <div className="design-grid">
+            {importedDesigns.map((design) => (
+              <DesignCard key={design.name} design={design} />
+            ))}
+          </div>
+        </section>
+        <FeatureRow />
+      </main>
+      <footer className="site-shell site-footer">
+        <p>Klol120 Tools. Built from the Stitch import with React, Vite, and Tailwind.</p>
+        <nav className="footer-links" aria-label="Footer navigation">
+          {navItems.map((item) => (
+            <a key={item.href} href={item.href} className="nav-link">
+              {item.label}
+            </a>
           ))}
-        </div>
-      </section>
-      <FeatureRow />
-      <footer className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 text-sm text-slate-500 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
-        <p>Klol120 Tools base. Built with React, Vite, and Tailwind.</p>
-        <div className="flex items-center gap-4 font-semibold">
-          <a className="hover:text-slate-950" href="#tools">
-            Tools
-          </a>
-          <a className="hover:text-slate-950" href="#categories">
-            Categories
-          </a>
-          <a className="hover:text-slate-950" href="#roadmap">
-            Roadmap
-          </a>
-        </div>
+        </nav>
       </footer>
-    </main>
+    </>
   )
 }
 
