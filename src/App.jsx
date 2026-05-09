@@ -171,6 +171,14 @@ function YouTubePage() {
     return values.map(String)
   }, [format, info])
 
+  async function readApiResponse(response) {
+    const contentType = response.headers.get('content-type') || ''
+    if (!contentType.includes('application/json')) {
+      throw new Error('The downloader API is not responding. Start the local server with npm run serve, or use http://127.0.0.1:3000/#/video.')
+    }
+    return response.json()
+  }
+
   async function fetchInfo(event) {
     event.preventDefault()
     setLoading(true)
@@ -178,7 +186,7 @@ function YouTubePage() {
     setInfo(null)
     try {
       const response = await fetch(`/api/youtube/info?url=${encodeURIComponent(url)}`)
-      const payload = await response.json()
+      const payload = await readApiResponse(response)
       if (!response.ok) throw new Error(payload.error)
       setInfo(payload)
       if (payload.qualities?.length && !payload.qualities.map(String).includes(quality)) {
